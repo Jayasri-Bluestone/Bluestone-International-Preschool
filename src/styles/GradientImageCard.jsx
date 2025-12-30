@@ -10,7 +10,7 @@ export default function GradientImageCard({
   radius,
 }) {
   return (
-    <div className={`relative h-[200px] perspective-[1200px] ${radius}`}>
+    <div className={`relative md:h-[200px] h-[160px] perspective-[1200px] ${radius}`}>
       <motion.div
         whileHover={{ rotateY: 180 }}
         transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -34,7 +34,7 @@ export default function GradientImageCard({
             className="absolute inset-0 items-center"
             style={{ backgroundColor: frontColor }}
           >
-            <h3 className="text-white text-wrap text-xl lg:text-2xl py-21 font-bold leading-tight">
+            <h3 className="text-white text-wrap justify-center text-2xl lg:text-2xl py-21 font-bold leading-tight">
               {title}
             </h3>
           </div>

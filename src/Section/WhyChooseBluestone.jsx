@@ -21,16 +21,16 @@ export default function WhyChooseBluestone() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <p className="text-orange-500 font-semibold text-2xl mb-4">
+          <p className="text-orange-500 font-semibold text-lg md:text-xl mb-4">
             Why Choose Bluestone
           </p>
 
-          <h2 className="text-4xl md:text-4xl font-extrabold text-purple-800">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-purple-800">
             Meeting Every Child <br />
             <span className="text-orange-500">Where They Are</span>
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg leading-relaxed max-w-xl">
+          <p className="mt-6 text-gray-600 lg:text-lg text-[16px] leading-tight md:leading-relaxed max-w-xl">
             Every child learns differently. At Bluestone, we nurture emotional,
             social, and academic growth through joyful, play-based experiences
             designed to build confidence, curiosity, and independence.

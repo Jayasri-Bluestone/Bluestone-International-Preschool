@@ -29,7 +29,7 @@ export default function Hero() {
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full grid md:grid-cols-2 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 h-full grid md:grid-cols-2 items-center text-center md:text-left">
 
         {/* LEFT TEXT */}
         <motion.div
@@ -50,14 +50,14 @@ export default function Hero() {
         >
           <motion.p
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="flex items-center gap-2 text-lg mt-5 mb-2 font-baloo"
+            className="items-center gap-2 text-[14px] md:text-sm lg:text-lg mt-5 mb-2 font-baloo"
           >
             🧸 Where Little Minds Grow
           </motion.p>
 
           <motion.h1
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-            className="text-4xl md:text-5xl font-extrabold font-baloo leading-tight"
+            className="text-4xl lg:text-5xl font-extrabold font-baloo leading-tight"
           >
             Inspiring Young Minds Every Day
           </motion.h1>
@@ -86,7 +86,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="md:flex justify-center items-end h-full"
+          className="hidden md:flex justify-center items-end h-full"
         >
           {/* Glow Effect */}
           <div className="absolute bottom-20 w-80 h-80 bg-white/20 blur-3xl rounded-full" />
@@ -94,7 +94,7 @@ export default function Hero() {
           <img
             src={girlImg}
             alt="Happy Preschool Girl"
-            className="relative h-[600px] drop-shadow-2xl"
+            className="relative max-h-[600px] drop-shadow-2xl"
           />
         </motion.div>
 

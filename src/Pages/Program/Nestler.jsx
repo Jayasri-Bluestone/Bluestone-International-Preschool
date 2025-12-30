@@ -44,7 +44,7 @@ export default function NestlersProgram() {
     <div className="bg-[#FAF7F2] text-gray-900 overflow-hidden">
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="min-h-[75vh] flex flex-col lg:gap-20 sm:gap-0 md:flex-row items-center px-6 md:px-16 lg:px-30 py-12 bg-gradient-to-b from-[#ce676a] to-[#fff]">
+      <section className="min-h-[75vh] flex flex-col lg:gap-20 md:flex-row items-center px-6 md:px-16 lg:px-30 py-6 md:py-12 bg-gradient-to-b from-[#ce676a] to-[#fff]">
         
         {/* LEFT TEXT */}
         <motion.div
@@ -89,7 +89,7 @@ export default function NestlersProgram() {
           <img
             src={two}
             alt="Happy Preschool Girl"
-            className="relative h-[300px] md:h-[480px] w-auto object-contain drop-shadow-3xl"
+            className="relative h-[200px] md:h-[400px] w-auto object-cover md:object-contain drop-shadow-3xl"
           />
         </motion.div>
       </section>
@@ -136,10 +136,10 @@ export default function NestlersProgram() {
           className="bg-[#F0EFEC] rounded-3xl shadow-xl p-8 h-full"
         >
           <h3 className="text-2xl font-extrabold text-[#1A2E6B] mb-8">
-            Program Details – Nestlers
+            Program Details – <span className="text-orange-500">Nestler</span>
           </h3>
 
-          <ul className="space-y-6 text-base md:text-[80%] lg:text-[100%]">
+          <ul className="space-y-6 text-base text-[80%] md:text-[80%] lg:text-[100%]">
             {[
               ["👶 Age", "2 – 3 Years"],
               ["🕘 Class Duration", "9:00 AM – 11:00 AM"],

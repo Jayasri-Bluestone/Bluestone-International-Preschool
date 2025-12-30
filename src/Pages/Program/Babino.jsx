@@ -44,7 +44,7 @@ export default function BambinoProgram() {
     <div className="bg-[#FAF7F2] text-gray-900 overflow-hidden">
 
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="min-h-[75vh] flex flex-col lg:gap-20 md:flex-row items-center px-6 md:px-16 lg:px-30 py-12 bg-gradient-to-b from-[#5c69ba] to-[#fff]">
+      <section className="min-h-[75vh] flex flex-col lg:gap-20 md:flex-row items-center px-6 md:px-16 lg:px-30 py-6 md:py-12 bg-gradient-to-b from-[#5c69ba] to-[#fff]">
         
         {/* LEFT TEXT */}
         <motion.div
@@ -71,7 +71,7 @@ export default function BambinoProgram() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => navigate("/admissions")}
-            className="mt-8 mb-8 px-8 py-3 rounded-full border-2 border-orange-500
+            className="mt-4 mb-0 px-8 py-3 rounded-full border-2 border-orange-500
                              text-orange-500 font-semibold
                              hover:bg-orange-500 hover:text-white transition"
           >
@@ -86,11 +86,11 @@ export default function BambinoProgram() {
           transition={{ duration: 1 }}
           className="relative md:flex justify-center items-end md:w-1/2 mt-10 md:mt-0"
         >
-          <div className="absolute bottom-14 md:bottom-24 w-60 md:w-80 h-60 md:h-80 bg-white/20 blur-3xl rounded-full" />
+          <div className="absolute md:bottom-24 w-60 md:w-80 h-60 md:h-80 bg-white/20 blur-3xl rounded-full" />
           <img
             src={girl}
             alt="Happy Preschool Girl"
-            className="relative h-[300px] md:h-[480px] w-auto object-contain drop-shadow-3xl"
+            className="relative h-[200px] md:h-[400px] w-auto object-cover md:object-contain drop-shadow-3xl"
           />
         </motion.div>
       </section>
@@ -136,10 +136,10 @@ export default function BambinoProgram() {
           className="bg-[#F0EFEC] rounded-3xl shadow-xl p-8 h-full"
         >
           <h3 className="text-2xl font-extrabold text-[#1A2E6B] mb-8">
-            Program Details – Bambinos
+            Program Details – <span className="text-orange-500"> Bambino</span>
           </h3>
 
-          <ul className="space-y-6 text-base md:text-[80%] lg:text-[100%]">
+          <ul className="space-y-6 text-base text-[80%] md:text-[80%] lg:text-[100%]">
             {[
               ["👶 Age", "3 – 4 Years"],
               ["🕘 Class Duration", "9:00 AM – 11:00 AM"],
