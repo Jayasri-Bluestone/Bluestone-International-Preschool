@@ -1,4 +1,4 @@
-import { Phone, Clock } from "lucide-react";
+import { Phone, Clock, Facebook, Instagram, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function TopBar() {
@@ -21,16 +21,20 @@ export default function TopBar() {
           gap-2 sm:gap-0
         "
       >
-
         {/* LEFT */}
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-center sm:text-left">
+        <div className="flex flex-row sm:flex-row  gap-2 sm:gap-6 sm:text-left">
 
           <motion.div
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2"
           >
             <Phone size={14} className="sm:size-[16px]" />
-            <span>+91 8489294776</span>
+            <a
+              href="tel:+123456789"
+              className="hover:text-orange-400 transition"
+            >
+              +91 63839 90668
+            </a>
           </motion.div>
 
           <motion.div
@@ -41,23 +45,59 @@ export default function TopBar() {
             <span className="text-[#D08407]">Opening:</span>
             <span>9:30am – 3:30pm</span>
           </motion.div>
-
         </div>
 
         {/* RIGHT */}
-        <div className="flex justify-center sm:justify-end items-center gap-3">
+        <div className="hidden sm:flex justify-center items-center gap-3">
           <span className="hidden sm:block">Follow us:</span>
 
-          {["f", "in", "▶"].map((icon, i) => (
-            <motion.span
-              key={i}
-              whileHover={{ scale: 1.15, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="w-6 h-6 flex items-center justify-center bg-white text-purple-700 rounded-full font-bold text-xs cursor-pointer shadow"
-            >
-              {icon}
-            </motion.span>
-          ))}
+          {/* WhatsApp */}
+          <motion.a
+            href="https://wa.me/6383990668"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-7 h-7 flex items-center justify-center bg-white text-green-600 rounded-full cursor-pointer shadow"
+          >
+            <Phone size={14} /> {/* WhatsApp icon replacement */}
+          </motion.a>
+
+          {/* Instagram */}
+          <motion.a
+            href="https://www.instagram.com/bluestoneips?igsh=cDMxYWM2Ym1keWNw"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-7 h-7 flex items-center justify-center bg-white text-pink-600 rounded-full cursor-pointer shadow"
+          >
+            <Instagram size={14} />
+          </motion.a>
+
+          {/* YouTube */}
+          <motion.a
+            href="https://www.youtube.com/@Bluestone-q9s1w"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-7 h-7 flex items-center justify-center bg-white text-red-600 rounded-full cursor-pointer shadow"
+          >
+            <Youtube size={14} />
+          </motion.a>
+
+          {/* Facebook */}
+          <motion.a
+            href="https://www.facebook.com/bipschool"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.15, rotate: 5 }}
+            whileTap={{ scale: 0.9 }}
+            className="w-7 h-7 flex items-center justify-center bg-white text-blue-600 rounded-full cursor-pointer shadow"
+          >
+            <Facebook size={14} />
+          </motion.a>
         </div>
 
       </div>

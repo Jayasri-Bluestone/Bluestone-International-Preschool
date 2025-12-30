@@ -1,66 +1,67 @@
+import { motion } from "framer-motion";
+
 export default function GradientImageCard({
   title,
   description,
   image,
+  frontColor,
   gradientFrom,
   gradientTo,
-  darkFrom,
-  darkTo,
   radius,
 }) {
   return (
-    <div className={`relative group perspective ${radius}`}>
-      
-      <div
-        className="
-          relative w-full h-full
-          min-h-[190px] lg:min-h-[210px]
-          transition-transform duration-700 ease-in-out
-          transform-style-preserve-3d
-          group-hover:rotate-y-180
-        "
+    <div className={`relative h-[200px] perspective-[1200px] ${radius}`}>
+      <motion.div
+        whileHover={{ rotateY: 180 }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="relative w-full h-full"
+        style={{ transformStyle: "preserve-3d" }}
       >
-
-        {/* FRONT — LIGHT IMAGE */}
+        {/* FRONT */}
         <div
-          className={`absolute inset-0 backface-hidden ${radius}`}
+          className={`absolute inset-0 ${radius} overflow-hidden`}
           style={{
-            backgroundImage: `
-              linear-gradient(to bottom right, ${gradientFrom}, ${gradientTo}),
-              url(${image})
-            `,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-
-        {/* BACK — IMAGE + DARK GRADIENT (PER CARD) */}
-        <div
-          className={`
-            absolute inset-0 backface-hidden rotate-y-180
-            flex flex-col justify-center items-center
-            text-center px-6
-            ${radius}
-          `}
-          style={{
-            backgroundImage: `
-              linear-gradient(to bottom right, ${darkFrom}, ${darkTo}),
-              url(${image})
-            `,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backfaceVisibility: "hidden",
           }}
         >
-          <h3 className="text-lg font-semibold mb-3 text-white">
-            {title}
-          </h3>
+          <img
+            src={image}
+            alt={title}
+            className="absolute w-full h-full object-cover"
+          />
 
-          <p className="text-sm leading-relaxed text-white/90">
-            {description}
-          </p>
+          <div
+            className="absolute inset-0 items-center"
+            style={{ backgroundColor: frontColor }}
+          >
+            <h3 className="text-white text-wrap text-xl lg:text-2xl py-21 font-bold leading-tight">
+              {title}
+            </h3>
+          </div>
         </div>
 
-      </div>
+        {/* BACK */}
+        <div
+          className={`absolute inset-0 ${radius} overflow-hidden`}
+          style={{
+            transform: "rotateY(180deg)",
+            backfaceVisibility: "hidden",
+            background: `linear-gradient(to top, ${gradientFrom}, ${gradientTo})`,
+          }}
+        >
+          <img
+            src={image}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+
+          <div className="relative z-10 h-full flex items-center justify-center p-6 text-center">
+            <p className="text-gray-800 font-medium leading-relaxed">
+              {description}
+            </p>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 }
