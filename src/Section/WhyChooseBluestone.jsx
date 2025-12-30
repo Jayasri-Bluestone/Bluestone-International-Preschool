@@ -30,7 +30,7 @@ export default function WhyChooseBluestone() {
             <span className="text-orange-500">Where They Are</span>
           </h2>
 
-          <p className="mt-6 text-gray-600 lg:text-lg text-[16px] leading-tight md:leading-relaxed max-w-xl">
+          <p className="mt-6 text-gray-600 lg:text-lg text-[16px] leading-relaxed max-w-xl">
             Every child learns differently. At Bluestone, we nurture emotional,
             social, and academic growth through joyful, play-based experiences
             designed to build confidence, curiosity, and independence.
