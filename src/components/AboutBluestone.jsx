@@ -3,7 +3,7 @@ import mdImg from "../assets/MD.png";
 import school1 from "../assets/prescl.jpg";
 import school2 from "../assets/class.jpg";
 import school3 from "../assets/draw.jpg";
-import school from "../assets/sclenv.jpg";
+import school from "../assets/Sclenv.jpg";
 
 export default function AboutBluestone() {
   return (
