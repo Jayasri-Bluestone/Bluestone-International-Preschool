@@ -34,9 +34,10 @@ export default function GradientImageCard({
             className="absolute inset-0 items-center"
             style={{ backgroundColor: frontColor }}
           >
-            <h3 className="text-white text-wrap justify-center text-2xl lg:text-2xl py-21 font-bold leading-tight">
+            <h3 className="text-white text-wrap align-center text-sm md:text-2xl py-21 font-bold leading-tight">
               {title}
             </h3>
+            
           </div>
         </div>
 

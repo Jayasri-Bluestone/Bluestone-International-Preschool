@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import mdImg from "../assets/MD.png";
-import school1 from "../assets/franchise-classroom.jpeg";
-import school2 from "../assets/gallery5.jpeg";
-import school3 from "../assets/gallery4.jpeg";
-import school from "../assets/teacher.jpeg";
+import school1 from "../assets/prescl.jpg";
+import school2 from "../assets/class.jpg";
+import school3 from "../assets/draw.jpg";
+import school from "../assets/sclenv.jpg";
 
 export default function AboutBluestone() {
   return (
@@ -164,7 +164,7 @@ export default function AboutBluestone() {
           </motion.h2>
 
           <div className="grid md:grid-cols-3 gap-10">
-            {[school1, school2, school3].map((img, index) => (
+            {[school, school3, school2].map((img, index) => (
               <motion.div
                 key={index}
                 whileHover={{ y: -10, scale: 1.02 }}

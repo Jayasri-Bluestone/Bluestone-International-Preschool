@@ -2,7 +2,14 @@ import { FaStar } from "react-icons/fa";
 
 export default function TestimonialCard({ testimonial }) {
   return (
-    <div className="relative w-[360px] h-[440px]">
+    <div
+      className="
+        relative
+        w-full max-w-[260px] h-[320px]
+        sm:max-w-[360px] sm:h-[440px]
+        mx-auto
+      "
+    >
       {/* SVG Speech Bubble */}
       <svg
         viewBox="0 0 360 440"
@@ -30,38 +37,43 @@ export default function TestimonialCard({ testimonial }) {
       </svg>
 
       {/* CONTENT */}
-      <div className="relative z-10 h-full px-8 py-10">
+      <div className="relative z-10 h-full px-6 py-8 sm:px-8 sm:py-10">
         {/* Profile */}
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex items-center gap-3 sm:gap-4 mb-4">
           <img
             src={testimonial.image}
             alt={testimonial.name}
-            className="w-14 h-14 rounded-full object-cover"
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
           />
           <div>
-            <h4 className="font-bold text-[#1F2B6C] text-left">
+            <h4 className="font-bold text-[#1F2B6C] text-left text-md sm:text-lg">
               {testimonial.name}
             </h4>
-            <p className="text-sm text-orange-500 font-semibold">
+            <p className="text-sm text-left text-orange-500 font-semibold">
               {testimonial.role}
             </p>
           </div>
         </div>
 
         {/* Text */}
-        <p className="text-gray-700 text-[16px] leading-[1.5rem] py-2 px-2">
+        <p className="text-gray-700 text-sm sm:text-[16px] leading-[1.4rem] sm:leading-[1.5rem] py-2 px-1">
           {testimonial.text}
         </p>
 
-        {/* ⭐ STARS — FIXED POSITION */}
-        <div className="absolute bottom-35 right-10 flex gap-1 text-yellow-400">
+        {/* ⭐ Stars */}
+        <div className="absolute bottom-22 sm:bottom-36 right-8 sm:right-10 flex gap-1 text-yellow-400 text-sm sm:text-base">
           {[...Array(5)].map((_, i) => (
             <FaStar key={i} />
           ))}
         </div>
 
-        {/* Quote mark */}
-        <div className="absolute bottom-8 right-10 text-8xl font-serif font-black text-black">
+        {/* Quote */}
+        <div
+          className="
+          absolute bottom-7 sm:bottom-8 right-8 sm:right-10
+          text-6xl sm:text-8xl font-serif font-black text-black
+          "
+        >
           ”
         </div>
       </div>
