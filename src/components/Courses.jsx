@@ -10,7 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 /* ---------- HERO IMAGE ---------- */
-import heroImg from "../assets/sclenv.jpg";
+import sclImg from "../assets/Sclenv.jpg";
 
 /* ---------- SYLLABUS IMAGES ---------- */
 import sensoryImg from "../assets/syllabus/sensory.webp";
@@ -77,7 +77,7 @@ export default function Curriculum() {
       <section className="relative min-h-[85vh] flex items-start justify-center overflow-hidden pt-24 md:pt-32 px-4 sm:px-6 lg:px-8">
         {/* Background Image */}
         <motion.img
-          src={heroImg}
+          src={sclImg}
           alt="International Preschool Curriculum"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
