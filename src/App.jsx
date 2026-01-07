@@ -22,7 +22,10 @@ import BsrProgram from "./Pages/Program/B Senior";
 
 // Scroll To Top
 import ScrollToTop from "./components/ScrollToTop";
-import Courses from "./components/Courses";
+import Curriculum from "./components/Courses";
+import Centers from "./components/Centers";
+import AboutFranchise from "./components/AboutFranchise";
+import Blog from "./components/Blog";
 
 
 export default function App() {
@@ -46,7 +49,11 @@ export default function App() {
           <Route path="/admissions" element={<Admissions />} />
           <Route path="/schedule-visit" element={<ScheduleVisit />} />
           <Route path="/about-bluestone" element={<AboutBluestone />} />
-          <Route path="/courses" element={<Courses />} />
+          <Route path="/curriculum" element={<Curriculum />} />
+          <Route path="/centres" element={<Centers />} />
+          <Route path="/franchise" element={<AboutFranchise />} />
+          <Route path="/blogs" element={<Blog/>} />
+
 
         </Routes>
       </main>

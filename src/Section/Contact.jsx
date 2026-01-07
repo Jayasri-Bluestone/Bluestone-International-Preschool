@@ -4,8 +4,8 @@ export default function ContactSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 h-full">
 
         {/* LEFT – CONTACT FORM */}
-        <div className="bg-[#222A41] text-white px-8 md:px-16 py-14 flex items-center">
-          <div className="w-full max-w-xl">
+        <div className="bg-[#222A41] text-white px-8 lg:px-36 py-14 flex items-center">
+          <div className="w-full w-xl">
 
             <p className="text-2xl tracking-wide mb-3">Get in Touch</p>
             <h2 className="text-4xl md:text-5xl font-extrabold mb-10">
@@ -73,8 +73,8 @@ export default function ContactSection() {
          <div className="w-full h-100 md:h-full">
          <iframe
   title="School Location"
-  src="https://www.google.com/maps?q=No.%209/179/1,%20Vettukadu,%20Erumaipatti%20PO,%20Idappadi%20TK,%20Tamil%20Nadu%20637102&output=embed"
-  className="w-full h-full border-0"
+  src="https://maps.app.goo.gl/nxUW9H9x3BhbJphT6&output=embed"
+  className="w-full h-full border-0 position"
   loading="lazy"
   allowFullScreen
 />

@@ -4,44 +4,44 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What age groups do you accept at Bluestone Preschool?",
+    question: "What teaching methodology does Bluestone Preschool use?",
     answer:
-      "We accept children from 1.5 years to 6 years across our structured preschool programs.",
+      "We use a play-based and experiential learning approach that encourages curiosity, creativity, and independent thinking in young children.",
   },
   {
-    question: "Is the campus safe for young children?",
+    question: "What are the school timings?",
     answer:
-      "Yes. Our campuses are designed with child safety in mind, including CCTV surveillance, trained staff, and secure access control.",
-  },
-   {
-    question: "Does joining a pre-school help?",
-    answer:
-      "Playschool is not compulsory but it helps children immensely with the transition to Kindergarten. Pre-school prepares children for a lifetime of learning. It helps children gain skills that help them learn to read, write, and build math and science skills with holistic brain development to make them school ready. It works towards holistic development mind-body and soul-develops cognitive, psychomotor, and affective domain",
+      "Our preschool operates in flexible half-day and full-day programs depending on the age group and selected curriculum.",
   },
   {
-    question: "What if my child is not ready for pre-school?",
+    question: "Do you provide daycare facilities?",
     answer:
-      "There is no checklist of must-have skills in children for pre-school. As the growth parameters for each child are different, at EuroKids we understand this and follow a Child First ideology.",
+      "Yes, we offer safe and nurturing daycare services with age-appropriate activities, supervised by trained caregivers.",
   },
   {
-    question: "What curriculum do you follow?",
+    question: "How are teachers trained at Bluestone Preschool?",
     answer:
-      "We follow a play-based, child-centric curriculum aligned with early childhood development standards.",
+      "All our teachers undergo regular training in early childhood education, child psychology, classroom safety, and modern teaching practices.",
   },
   {
-    question: "How do you communicate with parents?",
+    question: "What is the student-to-teacher ratio?",
     answer:
-      "We maintain regular communication through meetings, mobile apps, progress reports, and parent-teacher interactions.",
-  },
-   {
-    question: "What age groups do you accept at Bluestone Preschool?",
-    answer:
-      "We accept children from 1.5 years to 6 years across our structured preschool programs.",
+      "We maintain a low student-to-teacher ratio to ensure personalized attention and effective learning for every child.",
   },
   {
-    question: "Is the campus safe for young children?",
+    question: "Do you focus on extracurricular activities?",
     answer:
-      "Yes. Our campuses are designed with child safety in mind, including CCTV surveillance, trained staff, and secure access control.",
+      "Yes, we include music, dance, art, storytelling, physical play, and sensory activities as part of our holistic development program.",
+  },
+  {
+    question: "How do you handle children with special needs?",
+    answer:
+      "We follow an inclusive approach and work closely with parents to support children based on their individual developmental needs.",
+  },
+  {
+    question: "What safety and hygiene measures are followed?",
+    answer:
+      "We follow strict hygiene protocols, regular sanitization, child-safe infrastructure, and health monitoring to ensure a safe environment.",
   },
 ];
 

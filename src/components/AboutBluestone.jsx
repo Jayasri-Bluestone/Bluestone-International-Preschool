@@ -10,11 +10,11 @@ export default function AboutBluestone() {
     <main className="bg-white overflow-hidden">
 
      {/* ================= HERO ================= */}
-<section className="relative py-32 text-white overflow-hidden">
+<section className="relative min-h-[85vh] flex items-start justify-center overflow-hidden pt-24 md:pt-38 px-4 sm:px-6 lg:px-8">
 
   {/* BACKGROUND IMAGE */}
   <div
-    className="absolute inset-0 bg-cover bg-center scale-110"
+    className="absolute inset-0 bg-cover bg-center  scale-110"
     style={{
       backgroundImage: `url(${school})`,
     }}
@@ -40,10 +40,10 @@ export default function AboutBluestone() {
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2, duration: 0.8 }}
-      className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg"
+      className="text-4xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg"
     >
       About Bluestone <br />
-      <span className="text-orange-300">
+      <span className="text-orange-400">
         International Preschool
       </span>
     </motion.h1>
@@ -186,7 +186,7 @@ export default function AboutBluestone() {
       </section>
 
       {/* ================= CONTACT ================= */}
-      <section className="py-28 bg-purple-900 text-white">
+      <section className="text-center w-5xl bg-gradient-to-r from-purple-800 to-orange-500 rounded-3xl p-12 shadow-inner">
         <div className="max-w-6xl mx-auto px-8 text-center">
 
           <motion.h2

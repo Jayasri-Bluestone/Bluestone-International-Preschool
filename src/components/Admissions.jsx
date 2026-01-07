@@ -19,16 +19,25 @@ export default function Admissions() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  // Inside your Admissions component
+const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setSuccess("");
 
+    // 👇 GET THE IP FROM ENVIRONMENT OR USE THE STRING DIRECTLY
+    // For local deployment, use your IP found via 'ipconfig'
+ const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
     try {
-      const res = await fetch("http://localhost:5000/api/admissions", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+      // 🔄 CHANGED: Removed "http://localhost:5000" and used API_BASE
+     
+
+const res = await fetch(`${API_BASE}/api/admissions`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(formData),
+
       });
 
       if (res.ok) {
@@ -43,12 +52,15 @@ export default function Admissions() {
       } else {
         alert("Failed to submit form");
       }
-    } catch {
-      alert("Submission failed");
+    } catch (err) {
+      console.error("Fetch error:", err);
+      alert("Submission failed. Is the backend server running?");
     } finally {
       setLoading(false);
     }
   };
+
+  // ... rest of your return statement
 
   return (
     <>

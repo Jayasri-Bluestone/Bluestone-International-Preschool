@@ -11,7 +11,7 @@ export default function Gallery() {
 
   return (
     <section className="py-10 bg-white">
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
         <motion.div

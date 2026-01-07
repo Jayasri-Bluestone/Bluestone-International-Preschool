@@ -57,29 +57,31 @@ export default function Footer() {
           {/* EXPLORE */}
           <motion.div variants={item}>
             <h4 className="font-semibold text-lg mb-4 sm:mb-6 text-white">Explore</h4>
-            <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
-              <li><Link className="hover:text-orange-400 transition">About Bluestone</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Curriculum</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Day Care Program</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Parent Testimonials</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Partner Reviews</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Centres</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Our Presence</Link></li>
-            </ul>
+           <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
+  <li><Link to="/about-bluestone" className="hover:text-orange-400 transition">About Bluestone</Link></li>
+  <li><Link to="/courses" className="hover:text-orange-400 transition">Curriculum</Link></li>
+  <li><Link to="/daycare" className="hover:text-orange-400 transition">Day Care Program</Link></li>
+  <li><Link to="/testimonials" className="hover:text-orange-400 transition">Parent Testimonials</Link></li>
+  <li><Link to="/reviews" className="hover:text-orange-400 transition">Partner Reviews</Link></li>
+  <li><Link to="/centres" className="hover:text-orange-400 transition">Centres</Link></li>
+  <li><Link to="/presence" className="hover:text-orange-400 transition">Our Presence</Link></li>
+</ul>
+
           </motion.div>
 
           {/* MORE */}
           <motion.div variants={item}>
             <h4 className="font-semibold text-lg mb-4 sm:mb-6 text-white">More</h4>
-            <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
-              <li><Link className="hover:text-orange-400 transition">Courses</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Blogs</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Media</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Franchise</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Partner With Us</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Admission</Link></li>
-              <li><Link className="hover:text-orange-400 transition">Contact Us</Link></li>
-            </ul>
+<ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
+  <li><Link to="/courses" className="hover:text-orange-400 transition">Courses</Link></li>
+  <li><Link to="/blogs" className="hover:text-orange-400 transition">Blogs</Link></li>
+  <li><Link to="/media" className="hover:text-orange-400 transition">Media</Link></li>
+  <li><Link to="/franchise" className="hover:text-orange-400 transition">Franchise</Link></li>
+  <li><Link to="/partner" className="hover:text-orange-400 transition">Partner With Us</Link></li>
+  <li><Link to="/admissions" className="hover:text-orange-400 transition">Admission</Link></li>
+  <li><Link to="/contact" className="hover:text-orange-400 transition">Contact Us</Link></li>
+</ul>
+
           </motion.div>
 
           {/* CONTACT */}

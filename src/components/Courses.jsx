@@ -10,7 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 /* ---------- HERO IMAGE ---------- */
-import heroImg from "../assets/BLUES.png";
+import heroImg from "../assets/sclenv.jpg";
 
 /* ---------- SYLLABUS IMAGES ---------- */
 import sensoryImg from "../assets/syllabus/sensory.webp";
@@ -66,7 +66,7 @@ const syllabusData = [
   },
 ];
 
-export default function Courses() {
+export default function Curriculum() {
   const [activeIndex, setActiveIndex] = useState(null);
   const navigate = useNavigate();
 
@@ -94,9 +94,10 @@ export default function Courses() {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center max-w-4xl"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6">
-            Our International Curriculum
-          </h1>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-2 sm:mb-4">
+            Our International </h2>
+             <h1 className="text-orange-500 text-5xl md:text-6xl font-extrabold mb-6 text-center">Curriculum</h1>
+          
 
           <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
             A globally inspired, play-based learning journey nurturing creativity, confidence, and lifelong skills.
@@ -235,59 +236,66 @@ export default function Courses() {
       </section>
 
       {/* ================= BOTTOM SECTION ================= */}
-      <section className="bg-purple-800 text-white py-16 sm:py-24 relative overflow-hidden px-4 sm:px-6 lg:px-8">
-        {/* Animated Blobs */}
-        <motion.div
-          animate={{ y: [0, -20, 0], x: [0, 15, 0] }}
-          transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
-          className="absolute top-0 left-0 w-40 sm:w-64 h-40 sm:h-64 bg-pink-400/30 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{ y: [0, 25, 0], x: [0, -15, 0] }}
-          transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
-          className="absolute bottom-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-yellow-400/20 rounded-full blur-3xl"
-        />
+ <section className="py-20 bg-[#FAF7F2]">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <div className="relative bg-gradient-to-r from-purple-800 to-orange-500 text-white rounded-[2.5rem] py-16 sm:py-20 px-6 sm:px-10 overflow-hidden shadow-2xl">
 
-        <div className="relative max-w-6xl mx-auto text-center z-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6"
+      {/* Decorative Blobs */}
+      <motion.div
+        animate={{ y: [0, -20, 0], x: [0, 15, 0] }}
+        transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
+        className="absolute -top-16 -left-16 w-48 h-48 bg-pink-400/30 rounded-full blur-3xl"
+      />
+      <motion.div
+        animate={{ y: [0, 25, 0], x: [0, -15, 0] }}
+        transition={{ repeat: Infinity, duration: 15, ease: "easeInOut" }}
+        className="absolute -bottom-20 -right-20 w-72 h-72 bg-yellow-400/20 rounded-full blur-3xl"
+      />
+
+      {/* Content */}
+      <div className="relative text-center z-10 max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 sm:mb-6"
+        >
+          Unlock Your Child’s Full Potential
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-sm sm:text-base md:text-lg mb-8 sm:mb-12 text-white/90"
+        >
+          Our internationally inspired curriculum nurtures curiosity, creativity, and confidence.
+          From hands-on learning to early leadership skills, your child will thrive in a joyful,
+          playful, and supportive environment.
+        </motion.p>
+
+        <div className="flex justify-center">
+          <button
+            onClick={() => navigate("/admissions")}
+            className="px-8 sm:px-10 py-3 sm:py-4 rounded-full font-bold bg-white text-purple-800 shadow-lg hover:scale-105 transition text-sm sm:text-base"
           >
-            Unlock Your Child’s Full Potential
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-sm sm:text-base md:text-lg mb-8 sm:mb-12 max-w-3xl mx-auto"
-          >
-            Our internationally inspired curriculum nurtures curiosity, creativity, and confidence. 
-            From hands-on learning to early leadership skills, your child will thrive in a joyful, playful, and supportive environment. 
-            Let’s empower the next generation to dream big and explore without limits.
-          </motion.p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => navigate("/admissions")}
-              className="px-8 sm:px-10 py-3 sm:py-4 rounded-full font-bold bg-orange-500 text-white shadow-lg hover:bg-orange-400 transition text-sm sm:text-base"
-            >
-              Apply Now & Join the Journey
-            </button>
-          </div>
-
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-6 sm:mt-8 text-gray-200 italic text-sm sm:text-base"
-          >
-            “The best investment in a child’s future is the joy of learning today.”
-          </motion.p>
+            Apply Now & Join the Journey
+          </button>
         </div>
-      </section>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-6 sm:mt-8 text-white/80 italic text-sm sm:text-base"
+        >
+          “The best investment in a child’s future is the joy of learning today.”
+        </motion.p>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 }

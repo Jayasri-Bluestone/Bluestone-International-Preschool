@@ -24,7 +24,7 @@ export default function Navbar() {
   const [programOpen, setProgramOpen] = useState(false);
   const [mobileProgramOpen, setMobileProgramOpen] = useState(false);
 
-  const menuItems = ["FRANCHISE", "BLOGS", "COURSES", "CENTRES"];
+  const menuItems = ["FRANCHISE", "BLOGS", "CURRICULUM", "CENTRES"];
 
   const programs = [
     { name: "Nestlers", path: "/program/nestlers" },
@@ -36,13 +36,11 @@ export default function Navbar() {
   const mobileMenu = [
  
   { name: "About Us", path: "/about-bluestone", icon: FaInfoCircle },
-  { name: "Curriculum", path: "/curriculum", icon: FaBook },
   { name: "Corporate Daycare", path: "/daycare", icon: FaBuilding },
   { name: "Summer Club", path: "/club", icon: FaSun },
   { name: "Parents Talk", path: "/parents", icon: FaUsers },
   { name: "Partners with Us", path: "/partners", icon: FaHandshake },
   { name: "Media", path: "/media", icon: FaNewspaper },
-  { name: "Locate Us", path: "/locate", icon: FaMapMarkerAlt },
   { name: "Contact Us", path: "/contact", icon: FaPhoneAlt },
 ];
 
@@ -51,7 +49,7 @@ const mobilePrimaryMenu = [
   { name: "Programs", type: "programs",path:"/programs", icon: FaGraduationCap },
   { name: "Franchise", path: "/franchise", icon: FaJoint },
   { name: "Blogs", path: "/blogs" , icon: FaBuilding},
-  { name: "Courses", path: "/courses", icon: FaBookOpen },
+  { name: "Curriculum", path: "/curriculum", icon: FaBookOpen },
   { name: "Centres", path: "/centres", icon: FaIndustry},
 ];
 
@@ -67,7 +65,7 @@ const mobilePrimaryMenu = [
 
           {/* LOGO */}
           <Link to="/">
-            <img src={logo} alt="Bluestone Preschool" className="h-34 w-50" />
+            <img src={logo} alt="Bluestone Preschool" className="h-40 w-40" />
           </Link>
 
           {/* ================= DESKTOP MENU ================= */}
@@ -126,7 +124,7 @@ const mobilePrimaryMenu = [
           </nav>
 
           {/* DESKTOP ADMISSION */}
-          <div className="hidden md:block ">
+          <div className="hidden md:block">
             <Link
               to="/admissions"
               className="px-5 py-2 md:text-sm md:px-2 lg:text-lg lg:px-5 rounded-full  border-2 border-orange-400 text-orange-500 font-bold hover:bg-orange-400 hover:text-white transition"
