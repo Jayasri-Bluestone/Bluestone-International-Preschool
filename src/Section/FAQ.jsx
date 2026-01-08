@@ -68,7 +68,7 @@ export default function FAQSection() {
             Need Help?
           </p>
 
-          <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-[#1F2B6C]">
+          <h2 className="text-3xl md:text-5xl lg:text-5xl font-extrabold text-purple-800">
             Frequently Asked{" "}
             <span className="text-orange-500">Questions</span>
           </h2>

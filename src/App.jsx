@@ -26,6 +26,8 @@ import Curriculum from "./components/Courses";
 import Centers from "./components/Centers";
 import AboutFranchise from "./components/AboutFranchise";
 import Blog from "./components/Blog";
+import Daycare from "./components/Daycare";
+import SummerClub from "./components/SummerClub";
 
 
 export default function App() {
@@ -53,6 +55,9 @@ export default function App() {
           <Route path="/centres" element={<Centers />} />
           <Route path="/franchise" element={<AboutFranchise />} />
           <Route path="/blogs" element={<Blog/>} />
+          <Route path="/daycare" element={<Daycare/>} />
+          <Route path="/summer-club" element={<SummerClub/>} />
+
 
 
         </Routes>

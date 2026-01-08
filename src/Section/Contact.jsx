@@ -71,14 +71,19 @@ export default function ContactSection() {
 
         {/* RIGHT – GOOGLE MAP */}
          <div className="w-full h-100 md:h-full">
-         <iframe
+         {/* <iframe
   title="School Location"
   src="https://maps.app.goo.gl/nxUW9H9x3BhbJphT6&output=embed"
   className="w-full h-full border-0 position"
   loading="lazy"
   allowFullScreen
-/>
-        </div>
+/> */}
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3909.0064802203015!2d77.895065!3d11.551392499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba9599f3a4546b9%3A0x4aea79cf0f5182a9!2sBluestone%20Overseas%20Consultants!5e0!3m2!1sen!2ssg!4v1767779853193!5m2!1sen!2ssg"
+         title="School Location"
+       className="w-full h-full border-0 position"
+       allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+       </div>
         </div>
     </section>
   );

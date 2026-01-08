@@ -53,7 +53,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-3xl md:text-5xl font-extrabold text-[#1F2B6C]"
+          className="text-3xl md:text-5xl font-extrabold text-purple-800"
         >
           Trusted by <span className="text-orange-500">Parents</span>, Loved
           <br className="hidden md:block" /> by{" "}

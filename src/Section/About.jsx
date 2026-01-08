@@ -22,7 +22,7 @@ export default function About() {
             About Bluestone
           </p>
 
-          <h2 className="text-3xl md:text-4xl md:text-5xl font-extrabold text-[#1A2B6D] leading-tight">
+          <h2 className="text-3xl md:text-4xl md:text-5xl font-extrabold text-purple-800 leading-tight">
             Nurturing{" "}
             <span className="text-orange-500">Curious Minds</span> for a
             Brighter Tomorrow

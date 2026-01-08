@@ -7,6 +7,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  
   // 👇 Add this section
   server: {
     host: true,    // Listen on all network interfaces (needed for 'npm run dev')
@@ -16,4 +17,6 @@ export default defineConfig({
     host: true,    // Listen on all network interfaces (needed for 'npm run preview')
     port: 4173     // This is the default port for production preview
   }
+  
 });
+

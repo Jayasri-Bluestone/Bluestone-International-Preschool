@@ -48,7 +48,7 @@ export default function FranchiseOpportunity() {
             Franchise Opportunity
           </p>
 
-          <h1 className="text-3xl md:text-4xl lg:text-4xl font-bold text-[#1F2B6C] leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-purple-800 leading-tight">
             Build a <span className="text-orange-500">Successful Preschool</span>{" "}
             Business <br className="hidden md:block" /> with Bluestone
           </h1>
@@ -79,7 +79,7 @@ export default function FranchiseOpportunity() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-bold text-[#1F2B6C] mb-1">
+                  <h3 className="text-lg font-bold text-purple-800 mb-1">
                     {item.title}
                   </h3>
                   <p className="text-gray-700 text-sm md:text-base">

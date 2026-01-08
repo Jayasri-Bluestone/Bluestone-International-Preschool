@@ -59,7 +59,7 @@ function ManualCarousel({ items }) {
           <motion.div
             key={i}
             whileHover={{ scale: 1.05 }}
-            className="min-w-[300px] sm:min-w-[320px] bg-white rounded-3xl p-8 shadow-lg flex flex-col items-center text-center"
+            className="min-w-[300px] sm:min-w-[320px] bg-white rounded-3xl p-10 shadow-lg flex flex-col items-center text-center"
           >
             <div className="w-16 h-16 rounded-full flex items-center justify-center mb-5" style={{backgroundColor: item.color, color: 'white', fontSize: '1.8rem'}}>
               {item.icon}
@@ -246,9 +246,9 @@ const processSteps = [
       </section>
 
       {/* ================= WHAT WE PROVIDE ================= */}
-      <section className="py-28 bg-gradient-to-br from-purple-900 via-purple-700 to-orange-500">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-4xl font-extrabold text-white text-center mb-14">What We Provide</h2>
+      <section className="py-24 bg-[#FFF7ED]">
+        <div className="max-w-7xl mx-auto px-6 ">
+          <h2 className="text-4xl font-extrabold text-purple-800 text-center mb-14">What We Provide</h2>
           <ManualCarousel items={items} />
         </div>
       </section>

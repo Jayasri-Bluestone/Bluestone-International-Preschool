@@ -37,7 +37,7 @@ export default function Navbar() {
  
   { name: "About Us", path: "/about-bluestone", icon: FaInfoCircle },
   { name: "Corporate Daycare", path: "/daycare", icon: FaBuilding },
-  { name: "Summer Club", path: "/club", icon: FaSun },
+  { name: "Summer Club", path: "/summer-club", icon: FaSun },
   { name: "Parents Talk", path: "/parents", icon: FaUsers },
   { name: "Partners with Us", path: "/partners", icon: FaHandshake },
   { name: "Media", path: "/media", icon: FaNewspaper },

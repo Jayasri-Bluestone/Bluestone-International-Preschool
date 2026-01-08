@@ -59,7 +59,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 sm:mb-6 text-white">Explore</h4>
            <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
   <li><Link to="/about-bluestone" className="hover:text-orange-400 transition">About Bluestone</Link></li>
-  <li><Link to="/courses" className="hover:text-orange-400 transition">Curriculum</Link></li>
+  <li><Link to="/curriculum" className="hover:text-orange-400 transition">Curriculum</Link></li>
   <li><Link to="/daycare" className="hover:text-orange-400 transition">Day Care Program</Link></li>
   <li><Link to="/testimonials" className="hover:text-orange-400 transition">Parent Testimonials</Link></li>
   <li><Link to="/reviews" className="hover:text-orange-400 transition">Partner Reviews</Link></li>
@@ -73,7 +73,7 @@ export default function Footer() {
           <motion.div variants={item}>
             <h4 className="font-semibold text-lg mb-4 sm:mb-6 text-white">More</h4>
 <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
-  <li><Link to="/courses" className="hover:text-orange-400 transition">Courses</Link></li>
+  {/* <li><Link to="/courses" className="hover:text-orange-400 transition">Courses</Link></li> */}
   <li><Link to="/blogs" className="hover:text-orange-400 transition">Blogs</Link></li>
   <li><Link to="/media" className="hover:text-orange-400 transition">Media</Link></li>
   <li><Link to="/franchise" className="hover:text-orange-400 transition">Franchise</Link></li>

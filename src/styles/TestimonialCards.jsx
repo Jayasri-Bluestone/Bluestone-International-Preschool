@@ -46,7 +46,7 @@ export default function TestimonialCard({ testimonial }) {
             className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
           />
           <div>
-            <h4 className="font-bold text-[#1F2B6C] text-left text-md sm:text-lg">
+            <h4 className="font-bold text-purple-800 text-left text-md sm:text-lg">
               {testimonial.name}
             </h4>
             <p className="text-sm text-left text-orange-500 font-semibold">
