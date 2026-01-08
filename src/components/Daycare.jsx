@@ -39,7 +39,7 @@ const techFeatures = [
 
 export default function Daycare() {
   return (
-    <div className="bg-white font-sans text-[#222A41]">
+    <div className="bg-white text-[#222A41]">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center bg-gradient-to-r from-purple-900/90 via-purple-700/80 to-orange-500/80 overflow-hidden">
         <div className="absolute inset-0 opacity-40">

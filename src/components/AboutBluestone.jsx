@@ -185,53 +185,84 @@ export default function AboutBluestone() {
         </div>
       </section>
 
-      {/* ================= CONTACT ================= */}
-      <section className="text-center w-5xl bg-gradient-to-r from-purple-800 to-orange-500 rounded-3xl p-12 shadow-inner">
-        <div className="max-w-6xl mx-auto px-8 text-center">
+    {/* ================= CONTACT - FULLY INTERACTIVE ================= */}
+<section className="py-24 bg-white flex justify-center px-6">
+  <motion.div 
+    initial={{ opacity: 0, scale: 0.95 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    viewport={{ once: true }}
+    className="w-full max-w-6xl bg-gradient-to-br from-purple-800 via-purple-700 to-orange-500 rounded-[3rem] p-8 md:p-20 text-center text-white shadow-2xl relative overflow-hidden"
+  >
+    {/* Decorative Background Circles */}
+    <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
+    <div className="absolute bottom-0 right-0 w-64 h-64 bg-orange-400/20 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl" />
 
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl font-extrabold mb-16"
-          >
-            Visit & Connect With Us
-          </motion.h2>
+    <div className="relative z-10">
+      <motion.h2
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        className="text-4xl md:text-5xl font-extrabold mb-16"
+      >
+        Visit & Connect With Us
+      </motion.h2>
 
-          <div className="grid md:grid-cols-3 gap-12 text-white/90">
-
-            {[
-              { title: "📞 Phone", text: "+91 63839 90668" },
-              { title: "✉ Email", text: "info@bluestonepreschool.com" },
-               { title: "📍 Address", text: "No. 9/179/1, Vettukadu, Erumaipatti PO, Idappadi TK, Tamil Nadu – 637102" },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-lg"
-              >
-                <h4 className="text-xl font-semibold mb-4">{item.title}</h4>
-                <p className="leading-relaxed">{item.text}</p>
-              </motion.div>
-            ))}
-          </div>
-
+      <div className="grid md:grid-cols-3 gap-8 text-white">
+        {[
+          { 
+            title: "📞 Phone", 
+            text: "+91 63839 90668", 
+            link: "tel:+916383990668" 
+          },
+          { 
+            title: "✉ Email", 
+            text: "info@bluestonepreschool.com", 
+            link: "mailto:info@bluestonepreschool.com" 
+          },
+          { 
+            title: "📍 Address", 
+            text: "No. 9/179/1, Vettukadu, Idappadi TK, Tamil Nadu – 637102", 
+           
+          },
+        ].map((item, i) => (
           <motion.a
-            href="https://www.google.com/maps/search/No.+9%2F179%2F1,+Vettukadu"
-            target="_blank"
-            whileHover={{ scale: 1.07 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block mt-16 px-10 py-4 rounded-full bg-orange-500 text-white font-semibold shadow-lg hover:bg-orange-600 transition"
+            key={i}
+            href={item.link}
+            target={item.title.includes("Address") ? "_blank" : "_self"}
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:bg-white/30 transition-all duration-300 group cursor-pointer"
           >
-            View Location on Map
+            <h4 className="text-xl font-bold mb-3 text-orange-300 group-hover:text-white transition-colors">
+              {item.title}
+            </h4>
+            <p className="leading-relaxed font-medium text-purple-50 group-hover:underline">
+              {item.text}
+            </p>
           </motion.a>
+        ))}
+      </div>
 
-        </div>
-      </section>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+      >
+        <motion.a
+          href="https://www.google.com/maps/dir/?api=1&destination=11.5835,77.8488"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 mt-16 px-12 py-5 rounded-full bg-white text-purple-800 font-bold text-lg shadow-xl hover:bg-orange-500 hover:text-white transition-all duration-300"
+        >
+          Get Driving Directions
+        </motion.a>
+      </motion.div>
+    </div>
+  </motion.div>
+</section>
 
     </main>
   );
