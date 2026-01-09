@@ -41,7 +41,7 @@ export default function Daycare() {
   return (
     <div className="bg-white text-[#222A41]">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center bg-gradient-to-r from-purple-900/90 via-purple-700/80 to-orange-500/80 overflow-hidden">
+      <section className="relative h-[85vh] flex items-center bg-gradient-to-r from-purple-900/90 via-purple-700/80 to-orange-500/80 overflow-hidden">
         <div className="absolute inset-0 opacity-40">
           <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" alt="Modern Office" className="w-full h-full object-cover" />
         </div>
@@ -54,7 +54,7 @@ export default function Daycare() {
             view their employees as their greatest asset.
           </p>
           <button className="bg-orange-600 hover:bg-orange-500 text-white px-10 py-4 rounded-full font-bold transition">
-            Request Partnership Proposal
+            Request Partnership Proposal 
           </button>
         </div>
       </section>
@@ -124,7 +124,6 @@ export default function Daycare() {
              <div className="text-3xl font-black italic">ADOBE</div>
                <div className="text-3xl font-black italic">MICROSOFT</div>
              <div className="text-3xl font-black italic">DELOITTE</div>
-            
           </div>
         </div>
       </section>

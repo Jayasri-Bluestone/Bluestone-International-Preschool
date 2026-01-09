@@ -113,7 +113,7 @@ export default function Centers() {
              <li className="flex items-center gap-4">
               <FaMailBulk className="text-white" />
               <p className="text-white hover:text-black transition cursor-pointer"
-              a href="mailto:info@bluestonepreschool.com" target="_blank">info@bluestonepreschool.com</p>
+              a href="mailto:info@bluestonepreschool.com" target="_blank">info@bluestoneinternationalpreschool.com</p>
             </li>
 
             <li className="flex items-center gap-4">

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, AlertCircle, ClipboardList, UserCheck, CalendarDays } from "lucide-react";
+import { CheckCircle, AlertCircle, ClipboardList, UserCheck, CalendarDays, X } from "lucide-react";
 import boyImg from "../assets/boy1.webp";
 import bgImg from "../assets/BLUES.png";
-
 
 export default function Admissions() {
   const [formData, setFormData] = useState({
@@ -15,171 +14,189 @@ export default function Admissions() {
   });
 
   const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
-  const [status, setStatus] = useState({ type: "", message: "" }); // { type: 'success' | 'error', message: '' }
+  const [success, setSuccess] = useState(""); // "success" | "error" | "connection_error" | ""
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Auto-hide alerts after 5 seconds
-  useEffect(() => {
-    if (status.message) {
-      const timer = setTimeout(() => setStatus({ type: "", message: "" }), 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [status]);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(""); 
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
-  setSuccess(""); // Reset success state
+    // Use environment variable with a local fallback for development
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
-  const API_BASE = import.meta.env.VITE_API_BASE_URL;
-
-  try {
-    const res = await fetch(`${API_BASE}/api/admissions`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
-
-    if (res.ok) {
-      setSuccess("success"); // Trigger the green alert
-      setFormData({
-        parentName: "",
-        phone: "",
-        email: "",
-        program: "",
-        message: "",
+    try {
+      const res = await fetch(`${API_BASE}/api/admissions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
-    } else {
-      setSuccess("error"); // Trigger the red alert
+
+      if (res.ok) {
+        setSuccess("success");
+        setFormData({ parentName: "", phone: "", email: "", program: "", message: "" });
+      } else {
+        setSuccess("error");
+      }
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setSuccess("connection_error");
+    } finally {
+      setLoading(false);
+      // Auto-hide notification after 5 seconds
+      setTimeout(() => setSuccess(""), 5000);
     }
-  } catch (err) {
-    console.error("Fetch error:", err);
-    setSuccess("connection_error");
-  } finally {
-    setLoading(false);
-    // Auto-hide the alert after 4 seconds
-    setTimeout(() => setSuccess(""), 4000);
-  }
-};
+  };
 
   return (
-    <div className="overflow-x-hidden">
-      {/* FLOATING ALERT NOTIFICATION */}
-   {/* FLOATING NOTIFICATION ALERT */}
-<AnimatePresence>
-  {success && (
-    <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
-      className="fixed top-10 right-6 z-[100] flex items-center gap-4 p-5 rounded-2xl shadow-2xl border-l-8 bg-white max-w-sm"
-      style={{ 
-        borderLeftColor: success === "success" ? "#22c55e" : "#ef4444" 
-      }}
-    >
-      <div className={`p-2 rounded-full ${success === "success" ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"}`}>
-        {success === "success" ? (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-        ) : (
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    <div className="overflow-x-hidden font-sans">
+      
+      {/* FLOATING NOTIFICATION ALERT */}
+      <AnimatePresence>
+        {success && (
+          <motion.div
+            initial={{ opacity: 0, x: 100, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: 100 }}
+            className="fixed top-24 right-6 z-[999] flex items-center gap-4 p-5 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-l-8 bg-white max-w-sm"
+            style={{ 
+              borderLeftColor: success === "success" ? "#22c55e" : "#ef4444" 
+            }}
+          >
+            <div className={`p-2 rounded-full ${success === "success" ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"}`}>
+              {success === "success" ? <CheckCircle size={24} /> : <AlertCircle size={24} />}
+            </div>
+            
+            <div className="flex-1">
+              <h4 className="font-bold text-purple-900">
+                {success === "success" ? "Enquiry Sent!" : "Oops!"}
+              </h4>
+              <p className="text-xs text-gray-500 leading-tight">
+                {success === "success" 
+                  ? "We've received your details and will call you within 24 hours." 
+                  : success === "connection_error" 
+                    ? "Network error. Please check your internet and try again."
+                    : "Something went wrong on our end. Please try again later."}
+              </p>
+            </div>
+            
+            <button onClick={() => setSuccess("")} className="text-gray-300 hover:text-gray-600 transition-colors">
+              <X size={18} />
+            </button>
+          </motion.div>
         )}
-      </div>
-      
-      <div>
-        <h4 className="font-bold text-purple-900">
-          {success === "success" ? "Submission Received!" : "System Error"}
-        </h4>
-        <p className="text-xs text-gray-500">
-          {success === "success" 
-            ? "We have received your enquiry and will contact you shortly." 
-            : "We couldn't reach the server. Please try again later."}
-        </p>
-      </div>
-      
-      <button onClick={() => setSuccess("")} className="text-gray-300 hover:text-gray-500">
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-    </motion.div>
-  )}
-</AnimatePresence>
+      </AnimatePresence>
 
-      {/* HERO FORM SECTION */}
+      {/* HERO & FORM SECTION */}
       <section
-        className="relative min-h-screen w-full flex items-center justify-center px-6 py-20"
+        className="relative min-h-screen w-full flex items-center justify-center px-6 py-24 md:py-32"
         style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#442B89]/90 to-[#FF8E3C]/80"></div>
+        {/* Deep Purple/Orange Brand Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/95 via-purple-800/90 to-orange-500/80"></div>
 
-        <div className="relative z-10 max-w-6xl w-full grid md:grid-cols-2 gap-12 items-center">
-          {/* FORM CARD */}
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-[2.5rem] shadow-2xl p-8 md:p-12 w-full max-w-md mx-auto border-[6px] border-yellow-300"
+        <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
+          
+          {/* LEFT: FORM CARD */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className="text-center mb-8">
-              <h2 className="text-4xl font-black text-purple-900 mb-2">Join Our Family 🧸</h2>
-              <p className="text-gray-500 font-medium">Start your child's global journey today.</p>
-            </div>
-
-            <div className="space-y-4">
-              <input type="text" name="parentName" placeholder="Parent Name" value={formData.parentName} onChange={handleChange} required className="w-full px-5 py-3 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-purple-400 outline-none transition" />
-              <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required className="w-full px-5 py-3 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-purple-400 outline-none transition" />
-              <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required className="w-full px-5 py-3 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-purple-400 outline-none transition" />
-              <select name="program" value={formData.program} onChange={handleChange} required className="w-full px-5 py-3 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-purple-400 outline-none transition">
-                <option value="">Select Program</option>
-                <option>Nestler (6m+)</option>
-                <option>Bambino (2-3y)</option>
-                <option>B Junior (3-4y)</option>
-                <option>B Senior (4-5y)</option>
-              </select>
-              <textarea name="message" placeholder="Tell us about your child..." rows="2" value={formData.message} onChange={handleChange} className="w-full px-5 py-3 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-purple-400 outline-none transition" />
-            </div>
-
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              type="submit"
-              disabled={loading}
-              className="w-full mt-8 bg-orange-500 text-white py-4 rounded-2xl font-black text-lg hover:bg-orange-400 transition shadow-xl disabled:opacity-50"
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 w-full max-w-lg mx-auto border-[8px] border-yellow-400 relative"
             >
-              {loading ? "Registering..." : "SUBMIT ENQUIRY"}
-            </motion.button>
-          </motion.form>
+              {/* Floating Badge */}
+              <div className="absolute -top-6 -right-6 bg-orange-500 text-white p-4 rounded-2xl rotate-12 shadow-lg hidden md:block">
+                <p className="font-black text-xs uppercase tracking-widest">Admissions Open</p>
+                <p className="text-xl font-bold">2026-27</p>
+              </div>
 
-          {/* IMAGE SIDE */}
+              <div className="text-center mb-8">
+                <h2 className="text-4xl font-black text-purple-900 mb-2">Join Our Family 🧸</h2>
+                <p className="text-gray-500 font-medium italic">Give your child a world-class start.</p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="relative">
+                   <input type="text" name="parentName" placeholder="Parent Name" value={formData.parentName} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all" />
+                </div>
+                <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all" />
+                <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all" />
+                
+                <select name="program" value={formData.program} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none transition-all appearance-none cursor-pointer">
+                  <option value="">Select Program</option>
+                  <option>Nestler (6m+)</option>
+                  <option>Bambino (2-3y)</option>
+                  <option>B Junior (3-4y)</option>
+                  <option>B Senior (4-5y)</option>
+                </select>
+
+                <textarea name="message" placeholder="Tell us about your child (interests, needs...)" rows="3" value={formData.message} onChange={handleChange} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none transition-all resize-none" />
+              </div>
+
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                type="submit"
+                disabled={loading}
+                className="w-full mt-8 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-5 rounded-2xl font-black text-xl hover:shadow-[0_10px_30px_rgba(249,115,22,0.4)] transition-all shadow-xl disabled:opacity-50 uppercase tracking-wider"
+              >
+                {loading ? "Registering..." : "Apply Now"}
+              </motion.button>
+            </form>
+          </motion.div>
+
+          {/* RIGHT: IMAGE & TRUST BADGE */}
           <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} className="hidden md:flex flex-col items-center">
-            <img src={boyImg} alt="Happy Child" className="h-[600px] drop-shadow-2xl animate-bounce-slow" />
-            <div className="bg-white/20 backdrop-blur-md p-6 rounded-3xl border border-white/30 text-white text-center mt-[-50px]">
-              <p className="text-2xl font-bold">1000+ Happy Kids</p>
-              <p className="text-sm opacity-80 font-medium">Enrolled across our international centers</p>
+            <motion.img 
+              animate={{ y: [0, -20, 0] }} 
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              src={boyImg} 
+              alt="Happy Child" 
+              className="h-[650px] drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" 
+            />
+            <div className="bg-white/10 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 text-white text-center mt-[-80px] shadow-2xl">
+              <p className="text-3xl font-black">1000+ Happy Kids</p>
+              <p className="text-orange-200 font-bold tracking-widest uppercase text-sm mt-1">International Standard Campus</p>
             </div>
           </motion.div>
+
         </div>
       </section>
 
-      {/* NEW SECTION: ADMISSIONS PROCESS */}
-      <section className="py-24 bg-white">
+      {/* ENROLLMENT PROCESS SECTION */}
+      <section className="py-28 bg-[#FAF9F6]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-black text-center text-purple-900 mb-16">The Enrollment Process</h2>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <h2 className="text-4xl md:text-5xl font-black text-purple-900 mb-4">Enrollment Made Easy</h2>
+            <div className="h-2 w-24 bg-orange-500 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: <ClipboardList />, title: "1. Enquiry", desc: "Fill out the form above or visit our campus for a tour." },
-              { icon: <UserCheck />, title: "2. Interaction", desc: "A brief friendly meeting with the child and parents." },
-              { icon: <CalendarDays />, title: "3. Registration", desc: "Complete the documentation and welcome your child to Bluestone!" },
+              { icon: <ClipboardList size={32} />, title: "1. Online Enquiry", desc: "Submit the registration form with your basic details." },
+              { icon: <UserCheck size={32} />, title: "2. Personal Meet", desc: "Visit our campus for a tour and a friendly interaction session." },
+              { icon: <CalendarDays size={32} />, title: "3. Confirmation", desc: "Submit documents, complete registration, and start the journey!" },
             ].map((step, i) => (
-              <div key={i} className="text-center p-8 bg-gray-50 rounded-3xl hover:bg-purple-50 transition">
-                <div className="w-16 h-16 bg-orange-100 text-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="group p-10 bg-white rounded-[2.5rem] shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-purple-200 text-center"
+              >
+                <div className="w-20 h-20 bg-orange-50 text-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:bg-purple-600 group-hover:text-white transition-all duration-500 transform group-hover:rotate-12">
                   {step.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.desc}</p>
-              </div>
+                <h3 className="text-2xl font-bold text-purple-900 mb-4">{step.title}</h3>
+                <p className="text-gray-500 leading-relaxed font-medium">{step.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>

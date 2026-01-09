@@ -92,7 +92,7 @@ export default function Footer() {
               <li>
                 <a href="mailto:info@bluestonepreschool.com" target="_blank"
                   className="hover:text-orange-400 transition break-words block">
-                  info@bluestonepreschool.com
+                  info@bluestoneinternationalpreschool.com
                 </a>
               </li>
               <li>

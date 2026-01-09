@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Sun, Palette, Leaf, FlaskConical, Book, Utensils, CookingPot, CalendarCheck, ShieldCheck, Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
+
 
 // Mock images for demonstration
 import heroBg from '../assets/gallery5.jpeg'; // Placeholder for a vibrant summer hero image
@@ -26,6 +28,7 @@ const faqData = [
 
 export default function SummerClub() {
   const [openFAQ, setOpenFAQ] = useState(null);
+   const navigate = useNavigate();
 
   return (
     <div className="bg-white text-gray-800">
@@ -56,6 +59,7 @@ export default function SummerClub() {
             initial={{ opacity: 0, scale: 0.8 }} 
             animate={{ opacity: 1, scale: 1 }} 
             transition={{ delay: 0.8, duration: 0.8 }}
+            onClick={() => navigate("/admissions")}
             className="mt-12 flex flex-col sm:flex-row justify-center gap-4"
           >
         
@@ -306,6 +310,7 @@ export default function SummerClub() {
         <motion.button 
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+           onClick={() => navigate("/admissions")}
           className="bg-orange-500 text-white px-10 py-3 rounded-full font-extrabold text-xl hover:bg-white hover:text-orange-600 shadow-[0_20px_50px_rgba(234,88,12,0.3)] transition-all duration-300"
         >
           Enroll Your Child Today!
