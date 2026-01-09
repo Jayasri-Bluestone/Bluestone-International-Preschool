@@ -134,15 +134,18 @@ export default function Programs() {
                                group-hover:scale-110 transition duration-500"
                   />
                  {/* Arrow */}
-            <div
-  onClick={() => navigate(item.link)}     // <-- ADD CLICK
-  className={`absolute right-4 top-4 lg:top-7/8 translate-y-1
+        
+  <motion.button
+            whileHover={{ scale: 1.20 }}
+            whileTap={{ scale: 0.95 }}
+           onClick={() => navigate(item.link)}   
+            className={`absolute right-4 top-4 lg:top-7/8 translate-y-1
               w-12 h-12 rounded-full ${item.arrowColor}
               flex items-center justify-center cursor-pointer
               text-white text-xl font-bold shadow-lg`}
->
-  →
-</div>
+          >
+            →
+          </motion.button>
                 </div>
 
                 {/* Content */}

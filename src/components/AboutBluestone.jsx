@@ -215,8 +215,8 @@ export default function AboutBluestone() {
           },
           { 
             title: "✉ Email", 
-            text: "info@bluestonepreschool.com", 
-            link: "mailto:info@bluestonepreschool.com" 
+            text: "info@bluestoneinternationalpreschool.com", 
+            link: "mailto:info@bluestoneinternationalpreschool.com" 
           },
           { 
             title: "📍 Address", 
@@ -237,7 +237,7 @@ export default function AboutBluestone() {
             <h4 className="text-xl font-bold mb-3 text-orange-300 group-hover:text-white transition-colors">
               {item.title}
             </h4>
-            <p className="leading-relaxed font-medium text-purple-50 group-hover:underline">
+            <p className="leading-relaxed text-[14px] text-purple-50 group-hover:underline">
               {item.text}
             </p>
           </motion.a>
@@ -255,7 +255,7 @@ export default function AboutBluestone() {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 mt-16 px-12 py-5 rounded-full bg-white text-purple-800 font-bold text-lg shadow-xl hover:bg-orange-500 hover:text-white transition-all duration-300"
+          className="inline-flex items-center gap-2 mt-16 px-10 py-3 rounded-full bg-white text-purple-800 font-bold text-lg shadow-xl hover:bg-orange-500 hover:text-white transition-all duration-300"
         >
           Get Driving Directions
         </motion.a>

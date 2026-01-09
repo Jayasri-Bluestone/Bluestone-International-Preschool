@@ -16,6 +16,7 @@ import {
   FaChevronRight,
 } from "react-icons/fa";
 import { FaRupeeSign, FaClock } from "react-icons/fa";
+import { useState } from "react";
 
 
 /* Images */
@@ -76,12 +77,56 @@ function ManualCarousel({ items }) {
 export default function Franchise() {
   const navigate = useNavigate();
 
-  const scrollToEnquiry = () => {
-  document
-    .getElementById("franchise-enquiry")
-    ?.scrollIntoView({ behavior: "smooth" });
-};
+  const [formValues, setFormValues] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    city: "",
+    message: "",
+  });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const scrollToEnquiry = () => {
+    document.getElementById("franchise-enquiry")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Dynamically pick the URL (Render URL or Localhost)
+    const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+    
+    try {
+      const response = await fetch(`${API_BASE}/api/franchise`, {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json" // Crucial for Express to read req.body
+        },
+        body: JSON.stringify(formValues),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Enquiry submitted successfully!");
+        // Reset form
+        setFormValues({ fullName: "", email: "", phone: "", city: "", message: "" });
+      } else {
+        alert(`Server error: ${result.error || "Please try again."}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to connect to server. Check if your backend is running.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const items = [
     {
@@ -197,19 +242,22 @@ const processSteps = [
             Build a future-ready international preschool with strong systems & support.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button
+            <motion.button
+            whileHover={{ scale: 1.04 }}
   onClick={scrollToEnquiry}
-  className="px-8 py-3 rounded-full bg-white text-purple-800 font-bold"
+  className="px-8 py-3 rounded-full bg-transparent border border-white text-orange-400 font-bold shadow-lg hover:bg-purple-100 transition"
 >
   Apply for Franchise
-</button>
+</motion.button>
 
-            <button
+            <motion.button
+            whileHover={{ scale: 1.04 }}
               onClick={() => document.getElementById("why")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold"
+              className="px-11 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-400 transition"
             >
               Why Partner With Us
-            </button>
+            </motion.button>
+
           </div>
         </motion.div>
       </section>
@@ -308,15 +356,51 @@ const processSteps = [
              {/* ENQUIRY FORM */}
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white rounded-3xl shadow-2xl p-10 lg:sticky lg:top-32">
               <h3 className="text-3xl font-extrabold text-purple-800 mb-6 text-center">Franchise Enquiry</h3>
-              <form className="space-y-3">
-                {["Full Name", "Email", "Phone Number", "City"].map((p, i) => (
-                  <input key={i} placeholder={p} className="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 outline-none" />
-                ))}
-                <textarea placeholder="Tell us about your background" className="w-full px-5 py-4 rounded-xl border border-gray-300 h-28 focus:ring-2 focus:ring-purple-500 outline-none" />
-                <button type="submit" className="w-full py-4 rounded-full bg-orange-400 text-white font-bold text-lg hover:bg-orange-600 transition">
-                  Submit Enquiry
-                </button>
-              </form>
+             <form className="space-y-3" onSubmit={handleSubmit}>
+        <input 
+          name="fullName" 
+          value={formValues.fullName} 
+          onChange={handleChange} 
+          placeholder="Full Name" 
+          required 
+          className="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 outline-none" 
+        />
+        <input 
+          name="email" 
+          type="email"
+          value={formValues.email} 
+          onChange={handleChange} 
+          placeholder="Email" 
+          required 
+          className="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 outline-none" 
+        />
+        <input 
+          name="phone" 
+          value={formValues.phone} 
+          onChange={handleChange} 
+          placeholder="Phone Number" 
+          required 
+          className="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 outline-none" 
+        />
+        <input 
+          name="city" 
+          value={formValues.city} 
+          onChange={handleChange} 
+          placeholder="City" 
+          required 
+          className="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 outline-none" 
+        />
+        <textarea 
+          name="message" 
+          value={formValues.message} 
+          onChange={handleChange} 
+          placeholder="Tell us about your background" 
+          className="w-full px-5 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-purple-500 outline-none" 
+        />
+        <button type="submit" className="w-full py-4 rounded-full bg-orange-400 text-white font-bold text-lg hover:bg-orange-600 transition">
+          Submit Enquiry
+        </button>
+      </form>
             </motion.div>
 
             {/* TIMELINE */}

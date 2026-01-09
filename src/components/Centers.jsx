@@ -39,28 +39,30 @@ export default function Centers() {
             <h1 className="text-orange-500 text-5xl md:text-6xl font-extrabold mb-6 text-center">Salem</h1>
          
 
-          <p className="text-white/90 text-lg mb-10">
+          <p className="text-white/90 text-lg mb-10 text-center">
             Where joyful learning begins in a safe, nurturing,
             internationally inspired preschool environment.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-8 justify-center">
+            <motion.button
+            whileHover={{ scale: 1.04 }}
               onClick={() =>
                 document.getElementById("salem-center")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="px-8 py-3 rounded-full bg-white text-purple-800 font-bold shadow-lg hover:bg-purple-100 transition"
+              className="px-8 py-3 rounded-full bg-transparent border border-white text-orange-400 font-bold shadow-lg hover:bg-purple-100 transition"
             >
               Visit Salem Center
-            </button>
+            </motion.button>
 
-            <button
+             <motion.button
+            whileHover={{ scale: 1.04 }}
               onClick={() => navigate("/admissions")}
-              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-400 transition"
+              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-400 transition"
             >
               Apply for Admission
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </section>
@@ -113,7 +115,7 @@ export default function Centers() {
              <li className="flex items-center gap-4">
               <FaMailBulk className="text-white" />
               <p className="text-white hover:text-black transition cursor-pointer"
-              a href="mailto:info@bluestonepreschool.com" target="_blank">info@bluestoneinternationalpreschool.com</p>
+              a href="mailto:info@bluestoneinternationalpreschool.com" target="_blank">info@bluestoneinternationalpreschool.com</p>
             </li>
 
             <li className="flex items-center gap-4">

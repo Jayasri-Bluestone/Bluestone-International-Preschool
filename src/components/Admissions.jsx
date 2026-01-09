@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle, AlertCircle, ClipboardList, UserCheck, CalendarDays, X } from "lucide-react";
-import boyImg from "../assets/boy1.webp";
+import boyImg from "../assets/boy2.webp";
 import bgImg from "../assets/BLUES.png";
 
 export default function Admissions() {
@@ -91,88 +91,98 @@ export default function Admissions() {
       </AnimatePresence>
 
       {/* HERO & FORM SECTION */}
-      <section
-        className="relative min-h-screen w-full flex items-center justify-center px-6 py-24 md:py-32"
-        style={{ backgroundImage: `url(${bgImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+<section
+  className="relative h-[85vh] w-full flex items-center justify-center px-4 py-12 md:py-20"
+  style={{ 
+    backgroundImage: `url(${bgImg})`, 
+    backgroundSize: "cover", 
+    backgroundPosition: "center" 
+  }}
+>
+  {/* Deep Purple/Orange Brand Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-br from-purple-900/95 via-purple-800/90 to-orange-500/80"></div>
+
+  <div className="relative z-10 max-w-7xl w-full grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    
+    {/* LEFT: FORM CARD */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="flex justify-center lg:justify-start"
+    >
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white rounded-[2.5rem] shadow-2xl p-6 md:p-10 w-full max-w-md border-[6px] border-yellow-400 relative"
       >
-        {/* Deep Purple/Orange Brand Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/95 via-purple-800/90 to-orange-500/80"></div>
-
-        <div className="relative z-10 max-w-7xl w-full grid md:grid-cols-2 gap-16 items-center">
-          
-          {/* LEFT: FORM CARD */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white rounded-[3rem] shadow-2xl p-8 md:p-12 w-full max-w-lg mx-auto border-[8px] border-yellow-400 relative"
-            >
-              {/* Floating Badge */}
-              <div className="absolute -top-6 -right-6 bg-orange-500 text-white p-4 rounded-2xl rotate-12 shadow-lg hidden md:block">
-                <p className="font-black text-xs uppercase tracking-widest">Admissions Open</p>
-                <p className="text-xl font-bold">2026-27</p>
-              </div>
-
-              <div className="text-center mb-8">
-                <h2 className="text-4xl font-black text-purple-900 mb-2">Join Our Family 🧸</h2>
-                <p className="text-gray-500 font-medium italic">Give your child a world-class start.</p>
-              </div>
-
-              <div className="space-y-4">
-                <div className="relative">
-                   <input type="text" name="parentName" placeholder="Parent Name" value={formData.parentName} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all" />
-                </div>
-                <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all" />
-                <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all" />
-                
-                <select name="program" value={formData.program} onChange={handleChange} required className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none transition-all appearance-none cursor-pointer">
-                  <option value="">Select Program</option>
-                  <option>Nestler (6m+)</option>
-                  <option>Bambino (2-3y)</option>
-                  <option>B Junior (3-4y)</option>
-                  <option>B Senior (4-5y)</option>
-                </select>
-
-                <textarea name="message" placeholder="Tell us about your child (interests, needs...)" rows="3" value={formData.message} onChange={handleChange} className="w-full px-6 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none transition-all resize-none" />
-              </div>
-
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                type="submit"
-                disabled={loading}
-                className="w-full mt-8 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-5 rounded-2xl font-black text-xl hover:shadow-[0_10px_30px_rgba(249,115,22,0.4)] transition-all shadow-xl disabled:opacity-50 uppercase tracking-wider"
-              >
-                {loading ? "Registering..." : "Apply Now"}
-              </motion.button>
-            </form>
-          </motion.div>
-
-          {/* RIGHT: IMAGE & TRUST BADGE */}
-          <motion.div initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} className="hidden md:flex flex-col items-center">
-            <motion.img 
-              animate={{ y: [0, -20, 0] }} 
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              src={boyImg} 
-              alt="Happy Child" 
-              className="h-[650px] drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]" 
-            />
-            <div className="bg-white/10 backdrop-blur-xl p-8 rounded-[2.5rem] border border-white/20 text-white text-center mt-[-80px] shadow-2xl">
-              <p className="text-3xl font-black">1000+ Happy Kids</p>
-              <p className="text-orange-200 font-bold tracking-widest uppercase text-sm mt-1">International Standard Campus</p>
-            </div>
-          </motion.div>
-
+        {/* Floating Badge - Scaled for 85vh */}
+        <div className="absolute -top-4 -right-4 bg-orange-500 text-white p-3 rounded-xl rotate-12 shadow-lg hidden lg:block">
+          <p className="font-black text-[10px] uppercase tracking-widest">Admissions Open</p>
+          <p className="text-lg font-bold">2026-27</p>
         </div>
-      </section>
+
+        <div className="text-center mb-6">
+          <h2 className="text-2xl md:text-3xl font-black text-purple-900 mb-1">Join Our Family 🧸</h2>
+          <p className="text-sm text-gray-500 font-medium italic">Give your child a world-class start.</p>
+        </div>
+
+        <div className="space-y-3 md:space-y-6">
+          <input type="text" name="parentName" placeholder="Parent Name" value={formData.parentName} onChange={handleChange} required className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-purple-500 focus:ring-4 focus:ring-purple-500/10 outline-none transition-all text-sm" />
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <input type="tel" name="phone" placeholder="Phone Number" value={formData.phone} onChange={handleChange} required className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none text-sm" />
+            <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none text-sm" />
+          </div>
+          
+          <select name="program" value={formData.program} onChange={handleChange} required className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none transition-all appearance-none cursor-pointer text-sm">
+            <option value="">Select Program</option>
+            <option>Nestler (6m+)</option>
+            <option>Bambino (2-3y)</option>
+            <option>B Junior (3-4y)</option>
+            <option>B Senior (4-5y)</option>
+          </select>
+
+          <textarea name="message" placeholder="Messages..." rows="2" value={formData.message} onChange={handleChange} className="w-full px-5 py-3 rounded-xl bg-gray-50 border border-gray-200 focus:border-purple-500 outline-none text-sm resize-none" />
+        </div>
+
+        <motion.button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          type="submit"
+          disabled={loading}
+          className="w-full mt-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3 rounded-xl font-black text-lg hover:shadow-xl transition-all shadow-lg disabled:opacity-50 uppercase tracking-wider"
+        >
+          {loading ? "Processing..." : "Apply Now"}
+        </motion.button>
+      </form>
+    </motion.div>
+
+    {/* RIGHT: IMAGE & TRUST BADGE - Optimized for h-85vh */}
+    <motion.div 
+      initial={{ opacity: 0, x: 50 }} 
+      animate={{ opacity: 1, x: 0 }} 
+      className="hidden lg:flex flex-col items-center justify-center relative h-full"
+    >
+      <motion.img 
+        animate={{ y: [0, -15, 0] }} 
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        src={boyImg} 
+        alt="Happy Child" 
+        className="h-[500px] xl:h-[580px] object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]" 
+      />
+      <div className="bg-white/10 backdrop-blur-md p-6 rounded-[2rem] border border-white/20 text-white text-center mt-[-60px] shadow-2xl">
+        <p className="text-2xl font-black">100+ Happy Kids</p>
+        <p className="text-orange-200 font-bold tracking-widest uppercase text-[10px] mt-1">International Standard Campus</p>
+      </div>
+    </motion.div>
+
+  </div>
+</section>
 
       {/* ENROLLMENT PROCESS SECTION */}
-      <section className="py-28 bg-[#FAF9F6]">
+      <section className="py-12 md:py-16 lg:py-24 bg-[#FAF9F6]">
         <div className="container mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-20 ">
             <h2 className="text-4xl md:text-5xl font-black text-purple-900 mb-4">Enrollment Made Easy</h2>
             <div className="h-2 w-24 bg-orange-500 mx-auto rounded-full"></div>
           </div>

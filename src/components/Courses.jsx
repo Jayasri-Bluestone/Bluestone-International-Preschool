@@ -104,21 +104,24 @@ export default function Curriculum() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6 sm:mt-10">
-            <button
+          <motion.button
+            whileHover={{ scale: 1.04 }}
               onClick={() =>
-                document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" })
+                document.getElementById("courses")
+                  ?.scrollIntoView({ behavior: "smooth" })
               }
-              className="px-6 sm:px-8 py-3 rounded-full font-bold bg-white text-purple-800 shadow-lg text-sm sm:text-base"
+              className="px-8 py-3 rounded-full bg-transparent border border-white text-orange-400 font-bold shadow-lg hover:bg-purple-100 transition"
             >
               Explore Learning Journey
-            </button>
+            </motion.button>
 
-            <button
+             <motion.button
+            whileHover={{ scale: 1.04 }}
               onClick={() => navigate("/admissions")}
-              className="px-6 sm:px-8 py-3 rounded-full font-bold bg-orange-500 text-white shadow-lg hover:bg-orange-400 transition text-sm sm:text-base"
+              className="px-11 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-400 transition"
             >
               Apply for Admission
-            </button>
+            </motion.button>
           </div>
         </motion.div>
       </section>

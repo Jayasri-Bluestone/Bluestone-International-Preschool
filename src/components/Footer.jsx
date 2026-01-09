@@ -90,7 +90,7 @@ export default function Footer() {
 
             <ul className="space-y-3 text-white/60 text-[15px] sm:text-[16px]">
               <li>
-                <a href="mailto:info@bluestonepreschool.com" target="_blank"
+                <a href="mailto:info@bluestoneinternationalpreschool.com" target="_blank"
                   className="hover:text-orange-400 transition break-words block">
                   info@bluestoneinternationalpreschool.com
                 </a>
