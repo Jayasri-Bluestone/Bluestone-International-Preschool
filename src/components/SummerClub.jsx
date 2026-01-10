@@ -33,29 +33,29 @@ export default function SummerClub() {
     <div className="bg-white text-gray-800 overflow-x-hidden">
       
       {/* 1. Hero Section */}
-      <section className="relative h-screen bg-cover bg-center flex items-center justify-center p-6" style={{ backgroundImage: `url(${heroBg})` }}>
+      <section className="relative min-h-[85vh] bg-cover bg-center flex items-center justify-center p-6" style={{ backgroundImage: `url(${heroBg})` }}>
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/90 via-purple-700/80 to-orange-500/80 backdrop-brightness-75"></div>
         <div className="relative z-10 text-center text-white max-w-7xl mx-auto px-6">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="text-5xl md:text-7xl font-extrabold leading-tight drop-shadow-lg"
+            className="text-3xl md:text-7xl font-extrabold leading-tight drop-shadow-lg"
           >
             Dive into a Summer of <span className="text-orange-400">Discovery!</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
-            className="mt-6 text-lg md:text-xl font-light max-w-2xl mx-auto drop-shadow-md"
+            className="mt-2 text-sm md:text-xl font-light mx-auto drop-shadow-md"
           >
             Bluestone International Summer Club—where learning meets adventure for young minds aged 2-5.
           </motion.p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <button onClick={() => document.getElementById("summer")?.scrollIntoView({ behavior: "smooth" })} className="px-8 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white text-white font-bold hover:bg-white hover:text-purple-900 transition-all">
               Explore Adventures
             </button>
             <button onClick={() => navigate("/admissions")} className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-600 transition-all">
-              Apply for Admission
+              Apply for Admission 
             </button>
           </div>
         </div>

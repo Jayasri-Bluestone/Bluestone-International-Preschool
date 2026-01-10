@@ -1,59 +1,83 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, Hammer, Bell, Mail } from 'lucide-react';
 
-export default function Blog() {
+export default function BlogModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
 
-  // Optional: Set a target date for a countdown
-  const calculateTimeLeft = () => {
-    const difference = +new Date("2026-03-01") - +new Date(); // Set your date here
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-      };
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email) {
+      setSubscribed(true);
+      setTimeout(() => {
+        setSubscribed(false);
+        onClose();
+      }, 3000);
     }
-    return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 60000); // Update every minute
-    return () => clearTimeout(timer);
-  });
-
   return (
-    <section className="w-full min-h-[85vh] bg-gradient-to-r from-purple-800 to-orange-500 flex items-center justify-center px-6 text-center">
-      <div className="max-w-3xl">
-        {/* Decorative Badge */}
-        <span className="px-4 py-1 rounded-full bg-orange-600/20 text-orange-500 text-sm font-bold tracking-widest uppercase mb-6 inline-block">
-          Coming Soon
-        </span>
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* BACKDROP */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="fixed inset-0 bg-purple-900/60 backdrop-blur-sm z-[1000] flex items-center justify-center p-4"
+          />
 
-        <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6">
-          Our Blog is <span className="text-orange-600">Under Construction</span>
-        </h1>
+          {/* MODAL CONTENT */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg bg-white rounded-[2.5rem] shadow-2xl z-[1001] overflow-hidden border-[6px] border-orange-500/10"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={onClose}
+              className="absolute top-6 right-6 text-gray-400 hover:text-purple-900 transition-colors"
+            >
+              <X size={28} />
+            </button>
 
-        <p className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-          We’re preparing deep dives into early childhood education, parenting tips, and school updates. Stay tuned for our first post!
-        </p>
+            <div className="p-8 md:p-12 text-center">
+              {/* Icon Animation */}
+              <motion.div 
+                animate={{ rotate: [0, -10, 10, 0] }}
+                transition={{ repeat: Infinity, duration: 2 }}
+                className="w-20 h-20 bg-orange-100 text-orange-600 rounded-3xl flex items-center justify-center mx-auto mb-6"
+              >
+                <Hammer size={40} />
+              </motion.div>
 
-        {/* Simple Countdown */}
-        {/* <div className="grid grid-cols-3 gap-4 mb-12 max-w-md mx-auto">
-          {Object.keys(timeLeft).map((interval) => (
-            <div key={interval} className="bg-[#3A4158] p-4 rounded-2xl">
-              <div className="text-3xl font-bold text-white">{timeLeft[interval] || '0'}</div>
-              <div className="text-gray-400 text-xs uppercase tracking-wider">{interval}</div>
+              <h2 className="text-3xl md:text-4xl font-black text-purple-900 mb-4">
+                Coming Soon! ✍️
+              </h2>
+              
+              <p className="text-gray-500 font-medium leading-relaxed mb-8">
+                Our experts are busy crafting helpful parenting guides and school updates. Be the first to know when we launch!
+              </p>
+
+             <button 
+                    type="submit"
+                    className="w-full py-4 bg-gradient-to-r from-purple-800 to-purple-600 text-white font-bold rounded-2xl shadow-lg hover:shadow-purple-500/30 hover:-translate-y-1 transition-all flex items-center justify-center gap-2"
+                  >
+                    <Bell size={20} />
+                      Expected Launch: March 2026                  
+                      </button>
+              
             </div>
-          ))}
-        </div> */}
 
-      </div>
-    </section>
+            {/* Bottom Accent */}
+            <div className="h-2 w-full bg-gradient-to-r from-purple-800 via-orange-500 to-purple-800" />
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
   );
 }

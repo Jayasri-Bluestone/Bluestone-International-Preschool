@@ -61,7 +61,7 @@ export default function Footer() {
   <li><Link to="/about-bluestone" className="hover:text-orange-400 transition">About Bluestone</Link></li>
   <li><Link to="/curriculum" className="hover:text-orange-400 transition">Curriculum</Link></li>
   <li><Link to="/daycare" className="hover:text-orange-400 transition">Day Care Program</Link></li>
-  <li><Link to="/testimonials" className="hover:text-orange-400 transition">Parent Testimonials</Link></li>
+  <li><Link to="/parents-talk" className="hover:text-orange-400 transition">Parents Talk</Link></li>
   <li><Link to="/reviews" className="hover:text-orange-400 transition">Partner Reviews</Link></li>
   <li><Link to="/centres" className="hover:text-orange-400 transition">Centres</Link></li>
   <li><Link to="/presence" className="hover:text-orange-400 transition">Our Presence</Link></li>
@@ -74,7 +74,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 sm:mb-6 text-white">More</h4>
 <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
   {/* <li><Link to="/courses" className="hover:text-orange-400 transition">Courses</Link></li> */}
-  <li><Link to="/blogs" className="hover:text-orange-400 transition">Blogs</Link></li>
+  <li><Link to="/blog-trigger" className="hover:text-orange-400 transition">Blogs</Link></li>
   <li><Link to="/media" className="hover:text-orange-400 transition">Media</Link></li>
   <li><Link to="/franchise" className="hover:text-orange-400 transition">Franchise</Link></li>
   <li><Link to="/partner" className="hover:text-orange-400 transition">Partner With Us</Link></li>
@@ -139,7 +139,7 @@ export default function Footer() {
         text-center md:text-left text-[13px] sm:text-[14px]
         text-white/80
       ">
-        © 2024 Bluestone International Preschool. All rights reserved.
+        © 2026 Bluestone International Preschool. All rights reserved.
       </div>
 
     </footer>

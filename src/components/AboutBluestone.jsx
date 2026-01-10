@@ -194,7 +194,7 @@ export default function AboutBluestone() {
     className="w-full max-w-6xl bg-gradient-to-br from-purple-800 via-purple-700 to-orange-500 rounded-[3rem] p-8 md:p-20 text-center text-white shadow-2xl relative overflow-hidden"
   >
     {/* Decorative Background Circles */}
-    <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
+    <div className="absolute top-0 left-0 w-64 h-64 bg-white/20 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl" />
     <div className="absolute bottom-0 right-0 w-64 h-64 bg-orange-400/20 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl" />
 
     <div className="relative z-10">
@@ -206,7 +206,7 @@ export default function AboutBluestone() {
         Visit & Connect With Us
       </motion.h2>
 
-      <div className="grid md:grid-cols-3 gap-8 text-white">
+      <div className="grid lg:grid-cols-3 gap-8 text-white">
         {[
           { 
             title: "📞 Phone", 
@@ -232,7 +232,7 @@ export default function AboutBluestone() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 hover:bg-white/30 transition-all duration-300 group cursor-pointer"
+            className="bg-white/10 backdrop-blur-lg rounded-3xl p-2 md:p-8 border border-white/20 hover:bg-white/30 transition-all duration-300 group cursor-pointer"
           >
             <h4 className="text-xl font-bold mb-3 text-orange-300 group-hover:text-white transition-colors">
               {item.title}

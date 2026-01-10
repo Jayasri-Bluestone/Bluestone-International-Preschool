@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import TopBar from "./components/Top";
 import Footer from "./components/Footer";
@@ -25,17 +26,23 @@ import ScrollToTop from "./components/ScrollToTop";
 import Curriculum from "./components/Courses";
 import Centers from "./components/Centers";
 import AboutFranchise from "./components/AboutFranchise";
-import Blog from "./components/Blog";
+import BlogModal from "./components/Blog";
 import Daycare from "./components/Daycare";
 import SummerClub from "./components/SummerClub";
+import ParentTalks from "./components/ParentsTalk";
 
 
 export default function App() {
+  const [isBlogOpen, setIsBlogOpen] = useState(false);
   return (
     <BrowserRouter>
       <TopBar />
-      <Navbar />
+
+      <Navbar onBlogClick={() => setIsBlogOpen(true)} />
+
       <ScrollToTop />   {/* <-- This makes all pages start at top */}
+
+<BlogModal isOpen={isBlogOpen} onClose={() => setIsBlogOpen(false)} />
 
       <main className="min-h-full">
         <Routes>
@@ -54,11 +61,10 @@ export default function App() {
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/centres" element={<Centers />} />
           <Route path="/franchise" element={<AboutFranchise />} />
-          <Route path="/blogs" element={<Blog/>} />
+          {/* <Route path="/blogs" element={<Blog/>} /> */}
           <Route path="/daycare" element={<Daycare/>} />
           <Route path="/summer-club" element={<SummerClub/>} />
-
-
+          <Route path="/parents-talk" element={<ParentTalks/>} />
 
         </Routes>
       </main>

@@ -94,7 +94,7 @@ export default function Curriculum() {
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center max-w-4xl"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-2 sm:mb-4">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-2 sm:mb-4">
             Our International </h2>
              <h1 className="text-orange-500 text-5xl md:text-6xl font-extrabold mb-6 text-center">Curriculum</h1>
           
@@ -103,7 +103,7 @@ export default function Curriculum() {
             A globally inspired, play-based learning journey nurturing creativity, confidence, and lifelong skills.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6 sm:mt-10">
+          <div className="flex gap-4 justify-center flex-wrap">
           <motion.button
             whileHover={{ scale: 1.04 }}
               onClick={() =>
@@ -118,7 +118,7 @@ export default function Curriculum() {
              <motion.button
             whileHover={{ scale: 1.04 }}
               onClick={() => navigate("/admissions")}
-              className="px-11 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-400 transition"
+              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-400 transition"
             >
               Apply for Admission
             </motion.button>

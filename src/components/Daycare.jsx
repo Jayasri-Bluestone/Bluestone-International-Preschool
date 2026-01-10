@@ -53,10 +53,10 @@ export default function Daycare() {
         </div>
         {/* Constrained Container */}
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+          <h1 className="text-4xl md:text-7xl font-bold text-white mb-6">
             Future-Proof Your <br /><span className="text-orange-500">Workforce.</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mb-8">
+          <p className="text-medium lg:text-xl text-white/70 max-w-2xl mb-8">
             Bluestone International provides Tier-1 childcare solutions for companies that 
             view their employees as their greatest asset.
           </p>
