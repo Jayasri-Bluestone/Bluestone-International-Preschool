@@ -8,7 +8,10 @@ export default function BlogPost() {
   const { slug } = useParams();
   
   // 2. Find the specific post based on the URL slug
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
+
+const post = BLOG_POSTS.find(
+  (p) => p.slug.toLowerCase() === slug?.toLowerCase().trim()
+);
 
   const handleShare = () => {
   const shareData = {
@@ -35,7 +38,7 @@ export default function BlogPost() {
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-6">
         <h2 className="text-3xl font-bold text-purple-900 mb-4">Post Not Found</h2>
         <p className="text-gray-500 mb-8">The article you are looking for has moved or doesn't exist.</p>
-        <Link to="/blogs" className="bg-purple-600 text-white px-8 py-3 rounded-full font-bold shadow-lg">
+        <Link to={`/blogs/${post.slug}`} className="bg-purple-600 text-white px-8 py-3 rounded-full font-bold shadow-lg">
           Back to All Blogs
         </Link>
       </div>
