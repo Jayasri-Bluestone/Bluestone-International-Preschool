@@ -42,7 +42,6 @@ export default function BlogFeed({ posts = [] }) {
               {/* 4. Update Button to a Link */}
               <Link 
                 to={`/blogs/${post.slug}`} 
-                target="_blank" 
                 rel="noopener noreferrer"
                 className="text-purple-600 font-bold flex items-center gap-2 group-hover:text-orange-500 transition"
               >

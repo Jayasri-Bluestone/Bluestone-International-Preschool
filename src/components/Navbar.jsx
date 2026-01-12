@@ -44,7 +44,12 @@ export default function Navbar() {
 
   const mobilePrimaryMenu = [
     { name: "Home", path: "/", icon: FaHome },
-    { name: "Programs", type: "programs", path: "/programs", icon: FaGraduationCap },
+    {
+      name: "Programs",
+      type: "programs",
+      path: "/programs",
+      icon: FaGraduationCap,
+    },
     { name: "Franchise", path: "/franchise", icon: FaJoint },
     { name: "Blogs", path: "/blogs", icon: FaNewspaper }, // Changed path and icon
     { name: "Curriculum", path: "/curriculum", icon: FaBookOpen },
@@ -55,7 +60,7 @@ export default function Navbar() {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
   }, [menuOpen]);
 
-  return (  
+  return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
@@ -107,12 +112,18 @@ export default function Navbar() {
           </nav>
 
           <div className="hidden md:block">
-            <Link to="/admissions" className="px-5 py-2 border-2 border-orange-400 text-orange-500 font-bold rounded-full hover:bg-orange-400 hover:text-white transition">
+            <Link
+              to="/admissions"
+              className="px-5 py-2 border-2 border-orange-400 text-orange-500 font-bold rounded-full hover:bg-orange-400 hover:text-white transition"
+            >
               ADMISSION
             </Link>
           </div>
 
-          <button onClick={() => setMenuOpen(true)} className="text-3xl text-purple-900 bg-amber-500 rounded-full px-4 py-3">
+          <button
+            onClick={() => setMenuOpen(true)}
+            className="text-3xl text-purple-900 bg-amber-500 rounded-full px-4 py-3"
+          >
             ☰
           </button>
         </div>
@@ -137,8 +148,17 @@ export default function Navbar() {
               className="fixed top-0 right-0 z-50 h-full lg:w-[22%] md:w-[28%] sm:w-[80%] bg-white shadow-2xl rounded-l-3xl overflow-y-auto"
             >
               <div className="flex items-center justify-between px-6 py-0">
-                <img src={logo} alt="Bluestone" className="h-20 md:h-30 lg:h-40" />
-                <button onClick={() => setMenuOpen(false)} className="text-2xl text-purple-900">✕</button>
+                <img
+                  src={logo}
+                  alt="Bluestone"
+                  className="h-20 md:h-30 lg:h-40"
+                />
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="text-2xl text-purple-900"
+                >
+                  ✕
+                </button>
               </div>
 
               <div className="px-6">
@@ -146,19 +166,38 @@ export default function Navbar() {
                 <div className="md:hidden flex flex-col gap-3 text-[14px] font-bold text-purple-900">
                   {mobilePrimaryMenu.map((item) => {
                     const Icon = item.icon;
-                    
+
                     if (item.type === "programs") {
                       return (
                         <div key={item.name}>
-                          <button onClick={() => setMobileProgramOpen(!mobileProgramOpen)} className="flex items-center justify-between w-full hover:text-orange-500 transition">
-                            <span className="flex items-center gap-3"><Icon className="text-orange-400" /> PROGRAMS</span>
+                          <button
+                            onClick={() =>
+                              setMobileProgramOpen(!mobileProgramOpen)
+                            }
+                            className="flex items-center justify-between w-full hover:text-orange-500 transition"
+                          >
+                            <span className="flex items-center gap-3">
+                              <Icon className="text-orange-400" /> PROGRAMS
+                            </span>
                             <span>{mobileProgramOpen ? "−" : "+"}</span>
                           </button>
                           <AnimatePresence>
                             {mobileProgramOpen && (
-                              <motion.div initial={{ height: 0 }} animate={{ height: "auto" }} exit={{ height: 0 }} className="ml-4 mt-2 flex flex-col gap-2 overflow-hidden border-l border-orange-100 pl-4">
+                              <motion.div
+                                initial={{ height: 0 }}
+                                animate={{ height: "auto" }}
+                                exit={{ height: 0 }}
+                                className="ml-4 mt-2 flex flex-col gap-2 overflow-hidden border-l border-orange-100 pl-4"
+                              >
                                 {programs.map((p) => (
-                                  <Link key={p.name} to={p.path} onClick={() => setMenuOpen(false)} className="hover:text-orange-500 py-1 font-medium">{p.name}</Link>
+                                  <Link
+                                    key={p.name}
+                                    to={p.path}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="hover:text-orange-500 py-1 font-medium"
+                                  >
+                                    {p.name}
+                                  </Link>
                                 ))}
                               </motion.div>
                             )}
@@ -168,7 +207,12 @@ export default function Navbar() {
                     }
 
                     return (
-                      <Link key={item.name} to={item.path} onClick={() => setMenuOpen(false)} className="flex items-center gap-4 hover:text-orange-500">
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center gap-4 hover:text-orange-500"
+                      >
                         <Icon className="text-orange-400" />
                         {item.name.toUpperCase()}
                       </Link>
@@ -180,7 +224,12 @@ export default function Navbar() {
                   {mobileMenu.map((item) => {
                     const Icon = item.icon;
                     return (
-                      <Link key={item.name} to={item.path} onClick={() => setMenuOpen(false)} className="flex items-center gap-4 hover:text-orange-500">
+                      <Link
+                        key={item.name}
+                        to={item.path}
+                        onClick={() => setMenuOpen(false)}
+                        className="flex items-center gap-4 hover:text-orange-500"
+                      >
                         <Icon className="text-orange-400 text-lg" />
                         {item.name}
                       </Link>
@@ -188,7 +237,11 @@ export default function Navbar() {
                   })}
                 </div>
 
-                <Link to="/admissions" onClick={() => setMenuOpen(false)} className="mt-8 mb-10 block text-center px-4 py-3 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 transition shadow-lg">
+                <Link
+                  to="/admissions"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-8 mb-10 block text-center px-4 py-3 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 transition shadow-lg"
+                >
                   ENROLL NOW
                 </Link>
               </div>

@@ -7,8 +7,10 @@ export const BLOG_POSTS = [
     author: "Dr. Sarah Mitchell",
     date: "Jan 12, 2026",
     readTime: "5 min read",
-    image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&q=80&w=800",
-    excerpt: "Learn why getting messy is actually a sign of deep cognitive learning in toddlers.",
+    image:
+      "https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&q=80&w=800",
+    excerpt:
+      "Learn why getting messy is actually a sign of deep cognitive learning in toddlers.",
     content: `
       <p>Sensory play includes any activity that stimulates a young child's senses: touch, smell, taste, movement, balance, sight and hearing.</p>
       <h3>The Benefits</h3>
@@ -19,7 +21,7 @@ export const BLOG_POSTS = [
       </ul>
       <p>At Bluestone, we believe that children learn best when they can investigate the world with their own hands.</p>
     `,
-    relatedIds: [2, 4]
+    relatedIds: [2, 4],
   },
   {
     id: 2,
@@ -29,8 +31,10 @@ export const BLOG_POSTS = [
     author: "Chef Marcus Chen",
     date: "Jan 10, 2026",
     readTime: "4 min read",
-    image: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800",
-    excerpt: "Turn lunchtime into a fun adventure with these nutritious and creative bento-style ideas.",
+    image:
+      "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=800",
+    excerpt:
+      "Turn lunchtime into a fun adventure with these nutritious and creative bento-style ideas.",
     content: `
       <p>Getting toddlers to eat their greens can be a battle, but presentation is half the victory!</p>
       <h3>Quick Hacks:</h3>
@@ -41,7 +45,7 @@ export const BLOG_POSTS = [
       </ul>
       <p>Healthy habits started today will last a lifetime.</p>
     `,
-    relatedIds: [1, 3]
+    relatedIds: [1, 3],
   },
   {
     id: 3,
@@ -51,8 +55,10 @@ export const BLOG_POSTS = [
     author: "Mrs. Anjali Sharma",
     date: "Jan 05, 2026",
     readTime: "7 min read",
-    image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=800",
-    excerpt: "Understanding the key differences between various early education philosophies.",
+    image:
+      "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&q=80&w=800",
+    excerpt:
+      "Understanding the key differences between various early education philosophies.",
     content: `
       <p>Choosing a preschool is one of the biggest decisions a parent makes. But what do all these terms mean?</p>
       <h3>Montessori Approach</h3>
@@ -60,7 +66,7 @@ export const BLOG_POSTS = [
       <h3>The Bluestone International Way</h3>
       <p>We combine the best of Montessori with Play-way methods to ensure a holistic, international-standard curriculum.</p>
     `,
-    relatedIds: [1, 4]
+    relatedIds: [1, 4],
   },
   {
     id: 4,
@@ -70,8 +76,10 @@ export const BLOG_POSTS = [
     author: "Psychologist David Ray",
     date: "Jan 02, 2026",
     readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=800",
-    excerpt: "How to help your child name their emotions and manage big feelings effectively.",
+    image:
+      "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&q=80&w=800",
+    excerpt:
+      "How to help your child name their emotions and manage big feelings effectively.",
     content: `
       <p>EQ is often more important than IQ for long-term success. But how do we teach it to a 3-year-old?</p>
       <h3>Key Strategies:</h3>
@@ -82,6 +90,6 @@ export const BLOG_POSTS = [
       </ul>
       <p>Teaching empathy today creates a kinder world tomorrow.</p>
     `,
-    relatedIds: [1, 2]
-  }
+    relatedIds: [1, 2],
+  },
 ];

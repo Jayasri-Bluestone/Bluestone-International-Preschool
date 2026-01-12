@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import TopBar from "./components/Top";
@@ -26,35 +26,39 @@ import ScrollToTop from "./components/ScrollToTop";
 import Curriculum from "./components/Courses";
 import Centers from "./components/Centers";
 import AboutFranchise from "./components/AboutFranchise";
-// import BlogModal from "./components/Blog";
 import Daycare from "./components/Daycare";
 import SummerClub from "./components/SummerClub";
 import ParentTalks from "./components/ParentsTalk";
 import BlogPost from "./components/Blogs/BlogPosting";
 import { BLOG_POSTS } from "./components/Blogs/data";
 import BlogFeed from "./components/Blogs/BlogListing";
-
-
+import BlogNavbar from "./components/Blogs/BlogNavbar";
 
 export default function App() {
-  const [isBlogOpen, setIsBlogOpen] = useState(false);
+  const location = useLocation();
+  
+  // Logic to determine which Navbar to show
+  const isBlogPostPage = location.pathname.startsWith("/blogs/") && 
+                         location.pathname !== "/blogs";
+
   return (
-    <BrowserRouter>
+    <>
       <TopBar />
-
-      <Navbar onBlogClick={() => setIsBlogOpen(true)} />
-
-      <ScrollToTop />   {/* <-- This makes all pages start at top */}
-
+      
+      {/* Dynamic Navbar Switcher */}
+      {isBlogPostPage ? <BlogNavbar /> : <Navbar />}
+      
+      <ScrollToTop /> 
+      
       <main className="min-h-full">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/program" element={<Programs />} />
-           <Route path="/program/nestlers" element={<NestlersProgram />} />
-           <Route path="/program/bambino" element={<BambinoProgram />} />
+          <Route path="/program/nestlers" element={<NestlersProgram />} />
+          <Route path="/program/bambino" element={<BambinoProgram />} />
           <Route path="/program/b-junior" element={<BjrProgram />} />
-           <Route path="/program/b-senior" element={<BsrProgram />} />
+          <Route path="/program/b-senior" element={<BsrProgram />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/admissions" element={<Admissions />} />
@@ -63,16 +67,15 @@ export default function App() {
           <Route path="/curriculum" element={<Curriculum />} />
           <Route path="/centres" element={<Centers />} />
           <Route path="/franchise" element={<AboutFranchise />} />
-          {/* <Route path="/blogs" element={<Blog/>} /> */}
-          <Route path="/daycare" element={<Daycare/>} />
-          <Route path="/summer-club" element={<SummerClub/>} />
-          <Route path="/parents-talk" element={<ParentTalks/>} />
+          <Route path="/daycare" element={<Daycare />} />
+          <Route path="/summer-club" element={<SummerClub />} />
+          <Route path="/parents-talk" element={<ParentTalks />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
           <Route path="/blogs" element={<BlogFeed posts={BLOG_POSTS} />} />
-
         </Routes>
       </main>
+      
       <Footer />
-    </BrowserRouter>
+    </>
   );
 }

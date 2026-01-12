@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaMailBulk } from "react-icons/fa";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaClock,
+  FaMailBulk,
+} from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 /* -------- IMAGES -------- */
@@ -45,10 +50,11 @@ export default function Centers() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-           <motion.button
-            whileHover={{ scale: 1.04 }}
+            <motion.button
+              whileHover={{ scale: 1.04 }}
               onClick={() =>
-                document.getElementById("salem-center")
+                document
+                  .getElementById("salem-center")
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               className="px-8 py-3 rounded-full bg-transparent border border-white text-orange-400 font-bold shadow-lg hover:bg-purple-100 transition"
@@ -56,8 +62,8 @@ export default function Centers() {
               Explore Learning Journey
             </motion.button>
 
-             <motion.button
-            whileHover={{ scale: 1.04 }}
+            <motion.button
+              whileHover={{ scale: 1.04 }}
               onClick={() => navigate("/admissions")}
               className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-400 transition"
             >
@@ -68,7 +74,10 @@ export default function Centers() {
       </section>
 
       {/* ================= SALEM DETAILS ================= */}
-      <section id="salem-center" className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+      <section
+        id="salem-center"
+        className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24"
+      >
         {/* Animated background blobs - Hidden on very small screens to improve performance */}
         <motion.div
           animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
@@ -95,7 +104,9 @@ export default function Centers() {
                 <FaMapMarkerAlt size={20} />
               </div>
               <div>
-                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Address</h4>
+                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">
+                  Address
+                </h4>
                 <p className="text-white text-sm sm:text-base font-medium">
                   No. 9/179/1, Vettukadu, Erumaipatti PO, Idappadi TK, <br />
                   Salem, Tamil Nadu – 637102.
@@ -108,8 +119,13 @@ export default function Centers() {
                 <FaPhoneAlt size={20} />
               </div>
               <div>
-                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Phone</h4>
-                <a href="tel:+916383990668" className="text-white text-lg sm:text-xl font-bold hover:underline">
+                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">
+                  Phone
+                </h4>
+                <a
+                  href="tel:+916383990668"
+                  className="text-white text-lg sm:text-xl font-bold hover:underline"
+                >
                   +91 63839 90668
                 </a>
               </div>
@@ -119,9 +135,16 @@ export default function Centers() {
               <div className="p-3 bg-white/20 rounded-2xl text-white">
                 <FaMailBulk size={20} />
               </div>
-              <div className="min-w-0"> {/* Prevents text overflow */}
-                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Email</h4>
-                <a href="mailto:info@bluestoneinternationalpreschool.com" className="text-white text-sm sm:text-base font-medium break-all hover:underline">
+              <div className="min-w-0">
+                {" "}
+                {/* Prevents text overflow */}
+                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">
+                  Email
+                </h4>
+                <a
+                  href="mailto:info@bluestoneinternationalpreschool.com"
+                  className="text-white text-sm sm:text-base font-medium break-all hover:underline"
+                >
                   info@bluestoneinternationalpreschool.com
                 </a>
               </div>
@@ -132,8 +155,12 @@ export default function Centers() {
                 <FaClock size={20} />
               </div>
               <div>
-                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Hours</h4>
-                <p className="text-white text-sm sm:text-base font-medium">Mon – Fri : 9:00 AM – 4:00 PM</p>
+                <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">
+                  Hours
+                </h4>
+                <p className="text-white text-sm sm:text-base font-medium">
+                  Mon – Fri : 9:00 AM – 4:00 PM
+                </p>
               </div>
             </div>
           </div>
@@ -161,7 +188,11 @@ export default function Centers() {
                 whileHover={{ scale: 1.05 }}
                 className="aspect-square overflow-hidden rounded-3xl shadow-lg"
               >
-                <img src={img} alt="Salem Center" className="w-full h-full object-cover" />
+                <img
+                  src={img}
+                  alt="Salem Center"
+                  className="w-full h-full object-cover"
+                />
               </motion.div>
             ))}
           </div>
@@ -194,14 +225,14 @@ export default function Centers() {
         <div className="text-center bg-gradient-to-br from-purple-900 to-orange-500 rounded-[3rem] p-8 sm:p-16 shadow-2xl relative overflow-hidden">
           {/* Decorative Circle */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-orange-500/20 rounded-full blur-3xl" />
-          
+
           <div className="relative z-10">
             <h3 className="text-3xl md:text-5xl font-black text-white mb-6">
               Growing With Love 🌱
             </h3>
             <p className="text-purple-100 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-              Salem is our beginning. More centers will open soon as we grow — always with the same care,
-              quality, and commitment to children.
+              Salem is our beginning. More centers will open soon as we grow —
+              always with the same care, quality, and commitment to children.
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
