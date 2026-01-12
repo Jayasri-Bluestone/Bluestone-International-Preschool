@@ -74,7 +74,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4 sm:mb-6 text-white">More</h4>
 <ul className="space-y-2 text-white/60 text-[15px] sm:text-[16px]">
   {/* <li><Link to="/courses" className="hover:text-orange-400 transition">Courses</Link></li> */}
-  <li><Link to="/blog-trigger" className="hover:text-orange-400 transition">Blogs</Link></li>
+  <li><Link to="/blogs" className="hover:text-orange-400 transition">Blogs</Link></li>
   <li><Link to="/media" className="hover:text-orange-400 transition">Media</Link></li>
   <li><Link to="/franchise" className="hover:text-orange-400 transition">Franchise</Link></li>
   <li><Link to="/partner" className="hover:text-orange-400 transition">Partner With Us</Link></li>

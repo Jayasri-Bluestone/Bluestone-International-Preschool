@@ -35,7 +35,7 @@ export default function Centers() {
           <h2 className="text-2xl md:text-5xl font-extrabold text-white mb-2 uppercase tracking-wide">
             Our Flagship Center
           </h2>
-          <h1 className="text-orange-500 text-6xl md:text-8xl font-black mb-6 drop-shadow-lg">
+          <h1 className="text-orange-500 text-4xl md:text-6xl font-black mb-6 drop-shadow-lg">
             Salem
           </h1>
 

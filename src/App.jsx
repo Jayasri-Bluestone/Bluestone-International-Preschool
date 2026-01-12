@@ -26,10 +26,14 @@ import ScrollToTop from "./components/ScrollToTop";
 import Curriculum from "./components/Courses";
 import Centers from "./components/Centers";
 import AboutFranchise from "./components/AboutFranchise";
-import BlogModal from "./components/Blog";
+// import BlogModal from "./components/Blog";
 import Daycare from "./components/Daycare";
 import SummerClub from "./components/SummerClub";
 import ParentTalks from "./components/ParentsTalk";
+import BlogPost from "./components/Blogs/BlogPosting";
+import { BLOG_POSTS } from "./components/Blogs/data";
+import BlogFeed from "./components/Blogs/BlogListing";
+
 
 
 export default function App() {
@@ -41,8 +45,6 @@ export default function App() {
       <Navbar onBlogClick={() => setIsBlogOpen(true)} />
 
       <ScrollToTop />   {/* <-- This makes all pages start at top */}
-
-<BlogModal isOpen={isBlogOpen} onClose={() => setIsBlogOpen(false)} />
 
       <main className="min-h-full">
         <Routes>
@@ -65,6 +67,8 @@ export default function App() {
           <Route path="/daycare" element={<Daycare/>} />
           <Route path="/summer-club" element={<SummerClub/>} />
           <Route path="/parents-talk" element={<ParentTalks/>} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/blogs" element={<BlogFeed posts={BLOG_POSTS} />} />
 
         </Routes>
       </main>
