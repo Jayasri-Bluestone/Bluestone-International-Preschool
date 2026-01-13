@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import GradientImageCard from "../styles/GradientImageCard";
 
-import playImg from "../assets/play.JPG";
+import playImg from "../assets/play.jpg";
 import teacherImg from "../assets/group.jpeg";
-import safeImg from "../assets/gallery8.JPG";
-import growthImg from "../assets/gallery3.JPG";
+import safeImg from "../assets/gallery8.jpg";
+import growthImg from "../assets/gallery3.jpg";
 
 export default function WhyChooseBluestone() {
   const navigate = useNavigate();

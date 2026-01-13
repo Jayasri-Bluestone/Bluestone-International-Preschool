@@ -9,15 +9,15 @@ import {
 import { useNavigate } from "react-router-dom";
 
 /* -------- IMAGES -------- */
-import center1 from "../assets/gallery1.JPG";
-import center2 from "../assets/gallery3.JPG";
-import center3 from "../assets/gallery9.JPG";
-import center4 from "../assets/gallery11.JPG";
-import center5 from "../assets/gallery6.JPG";
+import center1 from "../assets/gallery1.jpg";
+import center2 from "../assets/gallery3.jpg";
+import center3 from "../assets/gallery9.jpg";
+import center4 from "../assets/gallery11.jpg";
+import center5 from "../assets/gallery6.jpg";
 import center6 from "../assets/child3.JPG";
-import center7 from "../assets/gallery10.JPG";
-import center8 from "../assets/gallery9.JPG";
-import center from "../assets/salem.JPG";
+import center7 from "../assets/gallery10.jpg";
+import center8 from "../assets/gallery9.jpg";
+import center from "../assets/salem.jpg";
 
 /**
  * OptimizedImage Component

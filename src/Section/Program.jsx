@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";   // <-- IMPORT
 
 import playgroupImg from "../assets/child5.JPG";
 import nurseryImg from "../assets/child2.JPG";
-import lkgImg from "../assets/play.JPG";
+import lkgImg from "../assets/play.jpg";
 import ukgImg from "../assets/child4.JPG";
 
 export default function Programs() {
