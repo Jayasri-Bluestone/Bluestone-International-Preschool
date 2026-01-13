@@ -17,7 +17,7 @@ import center5 from "../assets/gallery6.JPG";
 import center6 from "../assets/child3.JPG";
 import center7 from "../assets/gallery10.JPG";
 import center8 from "../assets/gallery9.JPG";
-import center from "../assets/Salem.JPG";
+import center from "../assets/salem.JPG";
 
 /**
  * OptimizedImage Component
