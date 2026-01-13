@@ -13,9 +13,9 @@ import {
    If possible, convert your images to .webp format and use those.
    WebP images are typically 30% smaller than JPGs.
 */
-import heroImg from "../assets/gallery9.jpg";
-import franchiseImg from "../assets/gallery13.jpg";
-import franImg from "../assets/gallery8.jpg";
+import heroImg from "../assets/gallery9.JPG";
+import franchiseImg from "../assets/gallery13.JPG";
+import franImg from "../assets/gallery8.JPG";
 
 /* ================= MANUAL CAROUSEL ================= */
 function ManualCarousel({ items }) {

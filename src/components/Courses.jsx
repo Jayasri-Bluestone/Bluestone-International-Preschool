@@ -11,7 +11,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 /* ---------- HERO IMAGE ---------- */
-import sclImg from "../assets/gallery3.jpg";
+import sclImg from "../assets/gallery3.JPG";
 import Img from "../assets/child8.jpeg";
 
 /* ---------- SYLLABUS IMAGES ---------- */

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import school from "../assets/gallery7.jpg";
+import school from "../assets/gallery7.JPG";
 import group from "../assets/group.jpeg";
 import { Shield, BarChart3, Users, Laptop, Camera, HeartPulse } from 'lucide-react';
 

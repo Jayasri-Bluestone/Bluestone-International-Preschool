@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 import img1 from "../assets/group.jpeg";
-import img2 from "../assets/child1.jpg";
-import img3 from "../assets/gallery5.jpg";
-import img4 from "../assets/child6.jpg";
-import img5 from "../assets/child4.jpg";
-import img6 from "../assets/gallery11.jpg";
+import img2 from "../assets/child1.JPG";
+import img3 from "../assets/gallery5.JPG";
+import img4 from "../assets/child6.JPG";
+import img5 from "../assets/child4.JPG";
+import img6 from "../assets/gallery11.JPG";
 
 export default function Gallery() {
   const images = [img1, img2, img3, img4, img5, img6];

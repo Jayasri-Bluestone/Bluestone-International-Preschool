@@ -15,11 +15,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 // Mock images
-import heroBg from "../assets/play.jpg";
+import heroBg from "../assets/play.JPG";
 import summer from "../assets/child8.jpeg";
-import activity1 from "../assets/child5.jpg";
+import activity1 from "../assets/child5.JPG";
 import activity2 from "../assets/child9.jpeg";
-import activity3 from "../assets/child4.jpg";
+import activity3 from "../assets/child4.JPG";
 
 const summerActivities = [
   {

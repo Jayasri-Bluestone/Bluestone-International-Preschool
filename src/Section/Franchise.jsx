@@ -5,7 +5,7 @@ import {
   FaShieldAlt,
   FaPuzzlePiece,
 } from "react-icons/fa";
-import classroomImg from "../assets/SclImg.jpg"; // replace image path
+import classroomImg from "../assets/SclImg.JPG"; // replace image path
 
 export default function FranchiseOpportunity() {
   const features = [

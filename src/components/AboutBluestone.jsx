@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import mdImg from "../assets/MD.png";
-import school1 from "../assets/child1.jpg";
-import school2 from "../assets/gallery8.jpg";
-import school3 from "../assets/School.jpg";
-import school from "../assets/gallery3.jpg";
-import school4 from "../assets/gallery11.jpg";
-import school5 from "../assets/child3.jpg";
-import school6 from "../assets/gallery.jpg";
-import scl from "../assets/School.jpg";
+import school1 from "../assets/child1.JPG";
+import school2 from "../assets/gallery8.JPG";
+import school3 from "../assets/School.JPG";
+import school from "../assets/gallery3.JPG";
+import school4 from "../assets/gallery11.JPG";
+import school5 from "../assets/child3.JPG";
+import school6 from "../assets/gallery.JPG";
+import scl from "../assets/School.JPG";
 
 export default function AboutBluestone() {
   return (

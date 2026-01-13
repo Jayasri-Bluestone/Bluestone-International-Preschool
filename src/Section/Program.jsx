@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";   // <-- IMPORT
 
-import playgroupImg from "../assets/child5.jpg";
-import nurseryImg from "../assets/child2.jpg";
-import lkgImg from "../assets/play.jpg";
-import ukgImg from "../assets/child4.jpg";
+import playgroupImg from "../assets/child5.JPG";
+import nurseryImg from "../assets/child2.JPG";
+import lkgImg from "../assets/play.JPG";
+import ukgImg from "../assets/child4.JPG";
 
 export default function Programs() {
   const navigate = useNavigate();      // <-- CREATE HOOK
