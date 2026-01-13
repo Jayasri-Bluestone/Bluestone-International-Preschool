@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import mainImg from "../assets/School.JPG";
 import smallImg1 from "../assets/child6.JPG";
-import smallImg2 from "../assets/play.JPG";
+import smallImg2 from "../assets/Play.JPG";
 import { useNavigate } from "react-router-dom";
 
 export default function About() {
