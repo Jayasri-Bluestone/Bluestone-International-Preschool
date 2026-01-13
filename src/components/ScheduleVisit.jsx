@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaCalendarCheck, FaChild, FaSchool } from "react-icons/fa";
-import school from "../assets/Sclenv.jpg";
+import school from "../assets/gallery8.jpg";
 
 
 export default function ScheduleVisit() {

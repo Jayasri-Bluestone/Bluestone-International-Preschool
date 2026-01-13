@@ -8,7 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import sclImg from "../assets/Sclenv.jpg";
+import sclImg from "../assets/group.jpeg";
 import Testimonials from "../Section/Testimonials";
 import { useNavigate } from "react-router-dom";
 

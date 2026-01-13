@@ -15,10 +15,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 // Mock images
-import heroBg from "../assets/gallery5.jpeg";
-import activity1 from "../assets/gallery2.jpeg";
-import activity2 from "../assets/gallery3.jpeg";
-import activity3 from "../assets/gallery1.jpeg";
+import heroBg from "../assets/play.jpg";
+import summer from "../assets/child8.jpeg";
+import activity1 from "../assets/child5.jpg";
+import activity2 from "../assets/child9.jpeg";
+import activity3 from "../assets/child4.jpg";
 
 const summerActivities = [
   {
@@ -154,7 +155,7 @@ export default function SummerClub() {
       {/* 3. The Advantage Section */}
       <section className="py-24 bg-[#FAF7F2]">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-20">
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-5xl font-black text-purple-900 mb-8 leading-tight">
                 The Bluestone <br />
@@ -202,8 +203,8 @@ export default function SummerClub() {
             <div className="lg:w-1/2 relative w-full">
               <div className="absolute -inset-4 bg-orange-400/20 blur-3xl rounded-full"></div>
               <img
-                src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000"
-                className="rounded-[3rem] relative z-10 border-[12px] border-white shadow-2xl w-full"
+                src={summer}
+                className="rounded-[3rem] relative z-10 border-[12px] item-center  border-white shadow-2xl w-[480px] h-[420px]"
                 alt="Happy Kids"
               />
             </div>

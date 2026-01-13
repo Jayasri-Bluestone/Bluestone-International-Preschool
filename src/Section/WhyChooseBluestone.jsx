@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import GradientImageCard from "../styles/GradientImageCard";
 
-import playImg from "../assets/playImg.jpeg";
-import teacherImg from "../assets/teacher.jpeg";
-import safeImg from "../assets/safeImg.jpeg";
-import growthImg from "../assets/growthImg.jpeg";
+import playImg from "../assets/play.jpg";
+import teacherImg from "../assets/group.jpeg";
+import safeImg from "../assets/gallery8.jpg";
+import growthImg from "../assets/gallery3.jpg";
 
 export default function WhyChooseBluestone() {
   const navigate = useNavigate();
@@ -31,9 +31,11 @@ export default function WhyChooseBluestone() {
           </h2>
 
           <p className="mt-6 text-gray-600 lg:text-lg text-[16px] leading-relaxed max-w-xl">
-            Every child learns differently. At Bluestone, we nurture emotional,
-            social, and academic growth through joyful, play-based experiences
-            designed to build confidence, curiosity, and independence.
+           Bluestone International Preschool is a child-centric early learning institution committed to nurturing young 
+           minds in a safe, engaging, and inclusive environment. Rooted in a strong foundation of play-based and experiential 
+           learning, our curriculum supports holistic development—cognitive, social, emotional, and physical—during the most 
+           formative years of a child’s life. We believe every child is unique and deserves personalized attention,
+            guided exploration, and joyful learning experiences.
           </p>
 
           {/* ✅ BUTTON ROUTING */}

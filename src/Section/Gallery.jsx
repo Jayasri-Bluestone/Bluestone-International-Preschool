@@ -1,13 +1,14 @@
 import { motion } from "framer-motion";
 
-import img1 from "../assets/gallery1.jpeg";
-import img2 from "../assets/gallery2.jpeg";
-import img3 from "../assets/gallery3.jpeg";
-import img4 from "../assets/teacher.jpeg";
-import img5 from "../assets/gallery5.jpeg";
-import img6 from "../assets/gallery6.jpeg";
+import img1 from "../assets/group.jpeg";
+import img2 from "../assets/child1.jpg";
+import img3 from "../assets/gallery5.jpg";
+import img4 from "../assets/child6.jpg";
+import img5 from "../assets/child4.jpg";
+import img6 from "../assets/gallery11.jpg";
 
 export default function Gallery() {
+  const images = [img1, img2, img3, img4, img5, img6];
 
   return (
     <section className="py-10 bg-white">
@@ -31,18 +32,21 @@ export default function Gallery() {
 
         {/* Mobile Sticky Stack */}
         <div className="md:hidden space-y-24">
-          {[img1, img2, img3, img4, img5, img6].map((img, i) => (
+          {images.map((img, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: false, amount: 0.5 }}
-              className="sticky top-24 rounded-3xl overflow-hidden shadow-xl"
+              // Added min-height to prevent layout shift during scroll
+              className="sticky top-24 rounded-3xl overflow-hidden shadow-xl bg-gray-100 min-h-[50vh]"
             >
               <img
                 src={img}
-                alt=""
+                alt={`Gallery image ${i + 1}`}
+                loading="lazy"      // Crucial: Only loads as the user scrolls
+                decoding="async"    // Prevents decoding from blocking UI
                 className="w-full h-[50vh] object-cover"
               />
             </motion.div>
@@ -62,7 +66,7 @@ export default function Gallery() {
             auto-rows-[240px]
           "
         >
-          {[img1, img2, img3, img4, img5, img6].map((img, i) => (
+          {images.map((img, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 30 }}
@@ -70,13 +74,15 @@ export default function Gallery() {
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
               className={`
-                rounded-3xl overflow-hidden
+                rounded-3xl overflow-hidden bg-gray-100
                 ${i === 1 || i === 3 ? "md:col-span-2" : "md:col-span-1"}
               `}
             >
               <img
                 src={img}
-                alt=""
+                alt={`Gallery image ${i + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </motion.div>

@@ -182,7 +182,7 @@ export default function BlogPost() {
             Want to see our campus?
           </span>
           <Link
-            to="/contact"
+            to="/admissions"
             className="bg-orange-500 text-white px-6 py-2 rounded-full font-bold hover:bg-white hover:text-orange-500 transition"
           >
             Book a Tour

@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";   // <-- IMPORT
 
-import playgroupImg from "../assets/playgroup.jpeg";
-import nurseryImg from "../assets/nursery.jpeg";
-import lkgImg from "../assets/lkg.jpeg";
-import ukgImg from "../assets/ukg.jpeg";
+import playgroupImg from "../assets/child5.jpg";
+import nurseryImg from "../assets/child2.jpg";
+import lkgImg from "../assets/play.jpg";
+import ukgImg from "../assets/child4.jpg";
 
 export default function Programs() {
   const navigate = useNavigate();      // <-- CREATE HOOK
@@ -13,36 +13,36 @@ export default function Programs() {
   const programs = [
     {
       title: "NESTLERS",
-      desc: "A gentle introduction to learning through play. Children develop motor skills, sensory awareness, and early social habits in a safe, nurturing space.",
+      desc: "Our Nestlers program provides a safe, caring, and stimulating environment where children take their first steps into structured learning. Through sensory play, music, movement, and guided exploration, children develop fine and gross motor skills, early social interaction, and emotional security.",
       age: "2 – 3 Years",
-      time: "9:00 - 12:00",
+      time: "9:30 - 12:20",
       img: playgroupImg,
       arrowColor: "bg-red-400",
       link: "/program/nestlers"       // <-- PAGE ROUTE
     },
     {
       title: "BAMBINO",
-      desc: "Encourages curiosity and self-expression through activities. Focus on language development, basic concepts, and building confidence through guided play.",
+      desc: "The Bambino program nurtures natural curiosity through play-based and experiential learning.Foundational language skills, early numeracy concepts, and self-confidence are developed in a joyful and engaging classroom environment. Activities are designed to enhance logical thinking, early writing skills, and social responsibility.",
       age: "3 – 4 Years",
-      time: "9:00 - 12:00",
+      time: "9:30 - 12:30",
       img: nurseryImg,
       arrowColor: "bg-blue-500",
       link: "/program/bambino"
     },
     {
       title: "B JUNIOR",
-      desc: "A balanced blend of play and structured learning. Children build early literacy, numeracy, and problem-solving skills through fun activities.",
+      desc: "B Junior offers a balanced blend of guided instruction and exploratory play. Children begin structured learning in literacy and numeracy while continuing to develop problem-solving skills, collaboration, and creativity. Activities are designed to enhance logical thinking, early writing skills, and social responsibility.",
       age: "4 – 5 Years",
-      time: "9:00 - 3:00",
+      time: "9:30 - 1:30",
       img: lkgImg,
       arrowColor: "bg-green-500",
       link: "/program/b-junior"
     },
     {
       title: "B SENIOR",
-      desc: "Prepares children for formal schooling with confidence. Emphasis on reading, writing, numeracy, and social-emotional development in an engaging environment.",
+      desc: "The B Senior program equips children with the academic, social, and emotional readiness required for primary school. Emphasis is placed on literacy, numeracy, critical thinking, and communication skills, along with values such as responsibility, empathy, and independence. Learning is structured, engaging, and developmentally appropriate.",
       age: "5 – 6 Years",
-      time: "9:00 - 3:00",
+      time: "9:30 - 1:30",
       img: ukgImg,
       arrowColor: "bg-yellow-300",
       link: "/program/b-senior"
@@ -56,8 +56,9 @@ export default function Programs() {
 
   useEffect(() => {
     const updateCards = () => {
-      if (window.innerWidth < 640) setCardsPerView(1);      // mobile
-      else if (window.innerWidth < 1024) setCardsPerView(2); // tablet
+      if (window.innerWidth < 540) setCardsPerView(1);      // mobile
+      else if (window.innerWidth < 780) setCardsPerView(2); 
+      else if (window.innerWidth < 1200) setCardsPerView(3);// tablet
       else setCardsPerView(4);                              // desktop
     };
 
@@ -153,10 +154,10 @@ export default function Programs() {
                   <h3 className="text-xl font-bold text-purple-900 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-6">
+                  <p className="text-gray-600 text-[12px] mb-6">
                     {item.desc}
                   </p>
-                  <div className="flex justify-between text-sm font-semibold">
+                  <div className="flex justify-between  text-sm font-semibold">
                     <span>
                       Age: <span className="text-orange-500">{item.age}</span>
                     </span>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import nestlersImg from "../../assets/nestlerkid.jpg";
+import nestlersImg from "../../assets/child5.jpg";
 import two from "../../assets/boyplay.png";
 import tree from "../../assets/tree.png"
 import { FaBrain, FaCommentDots, FaUsers, FaPalette } from "react-icons/fa";

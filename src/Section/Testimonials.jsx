@@ -1,29 +1,27 @@
 import { motion } from "framer-motion";
 import TestimonialCard from "../styles/TestimonialCards";
+import { FaFemale, FaMale } from "react-icons/fa";
 
 const testimonials = [
   {
     name: "Stephen Miller",
     role: "Parent of Bambino Program",
-    image: "https://i.pravatar.cc/100?img=11",
-    text:
-      "My child looks forward to school every single day, which itself says a lot. The teachers are warm, patient, and genuinely caring.",
+    image: FaMale, // Pass the component directly
+    text: "My child looks forward to school every single day, which itself says a lot. The teachers are warm, patient, and genuinely caring.",
     bg: "#FFE3D3",
   },
   {
     name: "Anitha R",
     role: "Parent of B Junior",
-    image: "https://i.pravatar.cc/100?img=47",
-    text:
-      "Bluestone offers the perfect balance between learning and play. The activities are well planned and engaging.",
+    image: FaFemale,
+    text: "Bluestone offers the perfect balance between learning and play. The activities are well planned and engaging.",
     bg: "#D6EEFF",
   },
   {
     name: "Priya M",
     role: "Parent of B Senior Student",
-    image: "https://i.pravatar.cc/100?img=32",
-    text:
-      "We love how the school focuses on creativity and overall development, not just academics.",
+    image: FaFemale,
+    text: "We love how the school focuses on creativity and overall development, not just academics.",
     bg: "#DFF3C2",
   },
 ];
@@ -38,7 +36,6 @@ export default function Testimonials() {
       className="py-20 bg-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 text-center">
-
         {/* Heading */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -66,44 +63,34 @@ export default function Testimonials() {
           transition={{ delay: 0.35 }}
           className="max-w-4xl mx-auto mt-4 text-[18px] text-gray-600"
         >
-         At Bluestone International Preschool, we believe early childhood is the foundation of lifelong learning. 
-         Our approach blends play, creativity, and structured learning to help children grow academically, socially, 
-         and emotionally in a safe and nurturing environment.
+          At Bluestone International Preschool, we believe early childhood is the foundation of lifelong learning. 
+          Our approach blends play, creativity, and structured learning.
         </motion.p>
 
         {/* SCROLLER */}
         <div className="relative mt-16 overflow-hidden">
-
-          {/* LEFT FOG */}
+          {/* FOG OVERLAYS */}
           <div className="pointer-events-none absolute left-0 top-0 h-full w-24 z-10 bg-gradient-to-r from-white to-transparent" />
-
-          {/* RIGHT FOG */}
           <div className="pointer-events-none absolute right-0 top-0 h-full w-24 z-10 bg-gradient-to-l from-white to-transparent" />
 
           <div className="testimonial-track">
-            {[...testimonials, ...testimonials].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -8, scale: 1.03 }}
-                className="testimonial-item"
-              >
+            {/* Double the array for seamless looping */}
+            {[...testimonials, ...testimonials, ...testimonials].map((item, index) => (
+              <div key={index} className="testimonial-item">
                 <TestimonialCard testimonial={item} />
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </div>
 
-      {/* CSS */}
-      <style>{`
+      <style jsx>{`
         .testimonial-track {
           display: flex;
           gap: 2rem;
           width: max-content;
-          animation: scroll-right 25s linear infinite;
+          animation: scroll-left 40s linear infinite;
+          will-change: transform;
         }
 
         .testimonial-track:hover {
@@ -112,20 +99,25 @@ export default function Testimonials() {
 
         .testimonial-item {
           flex-shrink: 0;
+          transition: transform 0.3s ease;
         }
 
-        @keyframes scroll-right {
+        .testimonial-item:hover {
+          transform: translateY(-8px) scale(1.02);
+        }
+
+        @keyframes scroll-left {
           0% {
-            transform: translateX(-50%);
+            transform: translateX(0);
           }
           100% {
-            transform: translateX(0%);
+            transform: translateX(-33.33%);
           }
         }
 
         @media (max-width: 768px) {
           .testimonial-track {
-            animation-duration: 35s;
+            animation-duration: 25s;
           }
         }
       `}</style>
