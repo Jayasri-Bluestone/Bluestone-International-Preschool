@@ -116,8 +116,23 @@ export default function AboutBluestone() {
             <p className="text-orange-500 font-semibold text-lg mb-2">From the Managing Director</p>
             <h2 className="text-4xl font-extrabold text-purple-800 mb-6">Mrs. Kumaresan Thangavel</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-5">
-              Mr. Kumaresan Thangavel is a dynamic visionary and transformative leader, dedicated to shaping the future of young minds...
-            </p>
+ Mr. Kumaresan Thangavel is a dynamic visionary and transformative
+
+              leader, dedicated to shaping the future of young minds and
+
+              propelling them toward prosperity and success. With over a decade
+
+              of impactful leadership at Bluestone Overseas Consultants, he has
+
+              been the driving force guiding countless students to realize their
+
+              global education and career aspirations with integrity,
+
+              excellence, and personalized care. He continues to ignite change
+
+              and build futures, blending the best of education, inspiration,
+
+              and human values.            </p>
             <p className="text-gray-700 text-lg leading-relaxed">
               We focus on emotional intelligence, creativity, confidence, and strong values — nurturing children for a beautiful future.
             </p>
