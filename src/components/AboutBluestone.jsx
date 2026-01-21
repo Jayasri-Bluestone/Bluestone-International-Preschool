@@ -114,7 +114,7 @@ export default function AboutBluestone() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-orange-500 font-semibold text-lg mb-2">From the Managing Director</p>
-            <h2 className="text-4xl font-extrabold text-purple-800 mb-6">Mrs. Kumaresan Thangavel</h2>
+            <h2 className="text-4xl font-extrabold text-purple-800 mb-6">Mr. Kumaresan Thangavel</h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-5">
  Mr. Kumaresan Thangavel is a dynamic visionary and transformative
 
@@ -192,7 +192,7 @@ export default function AboutBluestone() {
             <div className="grid lg:grid-cols-3 gap-8 text-white">
               {/* Contact Cards */}
               {[
-                { title: "📞 Phone", text: "+91 63839 90668", link: "tel:+916383990668" },
+                { title: "📞 Phone", text: "+91 99405 12066", link: "tel:+919940512066" },
                 { title: "✉ Email", text: "info@bluestoneinternationalpreschool.com", link: "mailto:info@bluestoneinternationalpreschool.com" },
                 { title: "📍 Address", text: "No. 9/179/1, Vettukadu, Idappadi TK, Tamil Nadu – 637102" },
               ].map((item, i) => (
@@ -211,7 +211,7 @@ export default function AboutBluestone() {
             </div>
             
             <motion.a
-              href="https://maps.google.com"
+              href="https://maps.app.goo.gl/FexVPGPbVhqABGgo6"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}

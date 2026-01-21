@@ -142,10 +142,10 @@ export default function BambinoProgram() {
           <ul className="space-y-6 text-base text-[80%] md:text-[80%] lg:text-[100%]">
             {[
               ["👶 Age", "3 – 4 Years"],
-              ["🕘 Class Duration", "9:00 AM – 11:00 AM"],
+              ["🕘 Class Duration", "9:30 AM – 12:30 PM"],
               ["📅 Duration", "Academic Year (Jun – Mar)"],
               ["🎨 Activities", "Storytelling, Music, Art & play"],
-              ["👩‍🏫 Teacher–Child Ratio", "Low Ratio"],
+              ["👩‍🏫 Teacher–Child Ratio", "15:1"],
               ["🗣 Language", "English"],
               ["🎓 Certification", "Yes"]
             ].map(([label, value], i) => (

@@ -142,10 +142,10 @@ export default function BsrProgram() {
           <ul className="space-y-6 text-base text-[80%] md:text-[80%] lg:text-[100%]">
             {[
               ["👶 Age", "5 – 6 Years"],
-              ["🕘 Class Duration", "9:00 AM – 11:00 AM"],
+              ["🕘 Class Duration", "9:30 AM – 01:30 PM"],
               ["📅 Duration", "Academic Year (Jun – Mar)"],
               ["🎨 Activities", "Reading, Writing & Math"],
-              ["👩‍🏫 Teacher–Child Ratio", "Low Ratio"],
+              ["👩‍🏫 Teacher–Child Ratio", "15:1"],
               ["🗣 Language", "English"],
               ["🎓 Certification", "Yes"]
             ].map(([label, value], i) => (

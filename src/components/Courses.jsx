@@ -144,7 +144,7 @@ export default function Curriculum() {
             </button>
             <button
               onClick={() => navigate("/admissions")}
-              className="w-full sm:w-auto px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-600 transition"
+              className="w-full sm:w-auto px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-500 transition"
             >
               Apply Now
             </button>

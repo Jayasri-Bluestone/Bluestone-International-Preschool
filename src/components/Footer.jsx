@@ -191,15 +191,15 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+916383990668"
+                  href="tel:+919940512066"
                   className="hover:text-orange-400 transition"
                 >
-                  +91 63839 90668
+                  +91 99405 12066
                 </a>
               </li>
               <li className="map">
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Bluestone+International+Preschool,+Vettukadu,+Erumaipatti+PO,+Idappadi+TK,+Tamil+Nadu+637102"
+                  href="https://maps.app.goo.gl/FexVPGPbVhqABGgo6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-orange-400 transition block break-words"
@@ -220,7 +220,7 @@ export default function Footer() {
                 <FaInstagram size={22} />
               </a>
               <a
-                href="https://wa.me/916383990668"
+                href="https://wa.me/919940512066"
                 target="_blank"
                 className="text-white/60 hover:text-orange-400 transition transform hover:scale-110"
               >

@@ -15,11 +15,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
 // Mock images
-import heroBg from "../assets/play.jpg";
+import heroBg from "../assets/Dance.jpg";
 import summer from "../assets/child8.jpeg";
-import activity1 from "../assets/child5.JPG";
-import activity2 from "../assets/child9.jpeg";
-import activity3 from "../assets/child4.JPG";
+import activity1 from "../assets/Playing.jpg";
+import activity2 from "../assets/Drawing.JPG";
+import activity3 from "../assets/Drow.jpg";
 
 const summerActivities = [
   {
@@ -119,7 +119,7 @@ export default function SummerClub() {
             </button>
             <button
               onClick={() => navigate("/admissions")}
-              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-600 transition-all"
+              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-500 transition-all"
             >
               Apply for Admission
             </button>
@@ -142,7 +142,7 @@ export default function SummerClub() {
                 <div className="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-900 group-hover:text-white transition-all duration-300">
                   {activity.icon}
                 </div>
-                <h3 className="text-2xl font-bold mb-3 text-purple-900">
+                <h3 className="text-2xl font-bold mb-3 text-purple-900 group-hover:text-orange-500">
                   {activity.title}
                 </h3>
                 <p className="text-gray-500 leading-relaxed">{activity.desc}</p>
@@ -243,7 +243,7 @@ export default function SummerClub() {
       </section>
 
       {/* 4. Gallery */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-purple-900 mb-4">
@@ -253,7 +253,7 @@ export default function SummerClub() {
               Take a peek at the discoveries created at Bluestone Summer Club.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
+          <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[450px]">
             <div className="md:col-span-2 md:row-span-2 overflow-hidden rounded-[2.5rem] shadow-lg">
               <img
                 src={heroBg}
@@ -325,7 +325,7 @@ export default function SummerClub() {
       {/* 6. CTA */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-gradient-to-br from-purple-900 to-purple-600 rounded-[3.5rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-to-br from-orange-500 to-purple-700 rounded-[3.5rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl">
             <div className="relative z-10">
               <h2 className="text-4xl md:text-6xl font-black mb-6">
                 Ready for <span className="text-orange-400">Endless Fun?</span>

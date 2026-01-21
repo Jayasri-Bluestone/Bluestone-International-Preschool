@@ -22,7 +22,7 @@ export default function TopBar() {
         "
       >
         {/* LEFT */}
-        <div className="flex flex-row sm:flex-row  gap-2 sm:gap-6 sm:text-left">
+        <div className="flex flex-row sm:flex-row  gap-6 sm:text-left">
 
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -33,7 +33,7 @@ export default function TopBar() {
               href="tel:+123456789"
               className="hover:text-orange-400 transition"
             >
-              +91 63839 90668
+              +91 99405 12066
             </a>
           </motion.div>
 
@@ -53,7 +53,7 @@ export default function TopBar() {
 
           {/* WhatsApp */}
           <motion.a
-            href="https://wa.me/6383990668"
+            href="https://wa.me/9940512066"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.15, rotate: 5 }}

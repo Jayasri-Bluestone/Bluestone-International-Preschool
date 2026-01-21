@@ -90,7 +90,7 @@ export default function Centers() {
             <motion.button
               whileHover={{ scale: 1.04 }}
               onClick={() => navigate("/admissions")}
-              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-orange-600 transition"
+              className="px-8 py-3 rounded-full bg-orange-500 text-white font-bold shadow-lg hover:bg-white hover:text-orange-500 transition"
             >
               Apply Now
             </motion.button>
@@ -120,7 +120,7 @@ export default function Centers() {
               <FaPhoneAlt className="mt-1 text-white/80" size={22} />
               <div>
                 <h4 className="text-white/70 text-xs font-bold uppercase tracking-widest mb-1">Phone</h4>
-                <a href="tel:+916383990668" className="text-xl font-bold hover:underline">+91 63839 90668</a>
+                <a href="tel:+919940512066" className="text-xl font-bold hover:underline">+91 99405 12066</a>
               </div>
             </div>
 
