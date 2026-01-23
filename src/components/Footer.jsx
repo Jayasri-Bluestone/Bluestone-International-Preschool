@@ -204,7 +204,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-orange-400 transition block break-words"
                 >
-                  No. 9/179/1, Vettukadu, Erumaipatti PO, Idappadi TK, Tamil
+                  No. 9/179/1, Vettukadu, Erumaipatti PO, Idappadi TK, Salem, Tamil
                   Nadu – 637102
                 </a>
               </li>

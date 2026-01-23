@@ -104,7 +104,7 @@ export default function ParentTalks() {
             Voices of our Community
           </span>
           <h1 className="text-5xl md:text-7xl font-black text-white mt-4">
-            Parent <span className="text-orange-500">Talks</span>
+            Parents <span className="text-orange-500">Talk</span>
           </h1>
           <p className="text-white max-w-2xl mx-auto text-lg mt-4">
             Hear directly from the families who make Bluestone Preschool their
